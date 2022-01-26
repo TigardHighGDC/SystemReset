@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WeightSystem : MonoBehaviour
 {
-    public int straight = 0;
-    public int slight = 0;
-    public int heavy = 0;
+    public int straight;
+    public int slight;
+    public int heavy;
     // Start is called before the first frame update
     void Start()
     {
