@@ -5,20 +5,21 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject bullet;
-    float time;
+    public float time;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
-        time = 1.0f;
+        timer = time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time -= Time.deltaTime;
-        if (time < 0.0f)
+        timer -= Time.deltaTime;
+        if (timer < 0.0f)
         {
-            time = 1.0f;
+            timer = time;
             Instantiate(bullet, transform.position, transform.rotation);
         }
     }
