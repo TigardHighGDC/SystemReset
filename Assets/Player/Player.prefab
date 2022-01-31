@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 30
-  fpsCam: {fileID: 0}
+  fpsCam: {fileID: 130390631203380601}
 --- !u!1 &130390631514351878
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,10 +60,10 @@ GameObject:
   - component: {fileID: 130390631514351876}
   - component: {fileID: 130390631514351879}
   - component: {fileID: 1907926172}
-  - component: {fileID: 2435734015663739481}
+  - component: {fileID: 8528306}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,9 +141,9 @@ CapsuleCollider:
   m_GameObject: {fileID: 130390631514351878}
   m_Material: {fileID: 13400000, guid: 831d46f455031ff449272426d3676bb7, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Enabled: 1
+  m_Radius: 0.7000001
+  m_Height: 2.3
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &130390631514351879
@@ -175,20 +175,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb3d: {fileID: 130390631514351879}
-  speed: 85
+  speed: 75
   thrust: 500
---- !u!65 &2435734015663739481
-BoxCollider:
+--- !u!136 &8528306
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130390631514351878}
-  m_Material: {fileID: 13400000, guid: 831d46f455031ff449272426d3676bb7, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2, y: 2.2, z: 1.2}
+  m_Radius: 1
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6677500803206490811
 GameObject:
@@ -282,7 +283,7 @@ BoxCollider:
   m_GameObject: {fileID: 6677500803206490811}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -371,5 +372,10 @@ PrefabInstance:
 --- !u!4 &130390631203380606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3215967689084304775, guid: 2705f4eecbe318644a0d3ac5dccc2489, type: 3}
+  m_PrefabInstance: {fileID: 3273646362078109945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &130390631203380601 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3215967689084304768, guid: 2705f4eecbe318644a0d3ac5dccc2489, type: 3}
   m_PrefabInstance: {fileID: 3273646362078109945}
   m_PrefabAsset: {fileID: 0}
