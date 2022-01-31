@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rb3d;
     public float speed;
-    public WeightSystem data;
+    //public WeightSystem data;
     
     float horizontal;
     float vertical;
@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
     
     void OnTriggerEnter(Collider collision)
     {
-        data.straight += 1;
+        //data.straight += 1;
         Destroy(gameObject);
     }
 }

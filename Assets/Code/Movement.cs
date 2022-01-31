@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButton("Jump") && rb3d.velocity.y > -0.005 && rb3d.velocity.y < 0.005 && time < 0.0f)
         {
-            rb3d.AddForce(new Vector3(0, thrust, 0));
+            rb3d.AddForce(new Vector3(0, thrust , 0));
             time = 0.1f;
         }
         time -= Time.deltaTime;
