@@ -4,10 +4,11 @@ public class basicShoot : MonoBehaviour
 {
     // Gun stats
     public int damage = 10;
-    public float timeBetweenShots = 0.5f, spread = 0.0f, range = 1000000.0f, reloadTime = 2.0f, fireRate = 0.2f;
+    public float timeBetweenShots = 0.5f, spread = 0.0f, reloadTime = 2.0f, fireRate = 0.2f;
     public int magSize = 10, shotsPerTap = 1;
     public bool allowButtonHold = true;
 
+    private float range;
     private int bulletsLeft;
     private bool shooting = false, readyToShoot = true, reloading = false;
 
@@ -35,8 +36,10 @@ public class basicShoot : MonoBehaviour
         }
 
         // 'R' is the reload button
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magSize && !reloading)
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magSize && !reloading) {
             Reload();
+            Debug.Log("Reloading...");
+        }
 
         // Shoot call
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0) {
@@ -49,10 +52,15 @@ public class basicShoot : MonoBehaviour
         readyToShoot = false;
         bulletsLeft--;
 
+        // Debug.Log(fpsCam.transform.position);
+        // Debug.Log(fpsCam.transform.forward);
+        // Debug.Log(rayHit);
+
         // RayCast
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out rayHit, range, whatIsEnemy)) {
             // Console log
             Debug.Log(rayHit.collider.name);
+            Debug.Log("Hit...");
 
             // Obj needs to contain a function called 'TakeDamage' that takes an int as damage
             rayHit.collider.GetComponent<Cannon>().TakeDamage(damage);
@@ -74,5 +82,6 @@ public class basicShoot : MonoBehaviour
     private void FinishReload() {
         bulletsLeft = magSize;
         reloading = false;
+        Debug.Log("Done reloading...");
     }
 }

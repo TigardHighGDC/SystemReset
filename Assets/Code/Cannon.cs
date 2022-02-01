@@ -14,6 +14,7 @@ public class Cannon : MonoBehaviour
 
     public void TakeDamage(int damage) {
         health -= damage;
+        Debug.Log("Took Damage");
 
         if (health <= 0) {
             die();
@@ -23,5 +24,4 @@ public class Cannon : MonoBehaviour
     private void die() {
         Destroy(gameObject);
     }
-
 }
