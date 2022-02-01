@@ -48,6 +48,7 @@ public class basicShoot : MonoBehaviour
 
         // RayCast
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out rayHit, range, whatIsEnemy)) {
+            // Console log
             Debug.Log(rayHit.collider.name);
 
             // Obj needs to contain a function called 'TakeDamage' that takes an int as damage
