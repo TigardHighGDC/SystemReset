@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb3d: {fileID: 5757510437738470757}
   speed: 75
-  weight: {fileID: 8497294157693863388, guid: 564df649953f1d14fac299735e9c1e31, type: 3}
+  weight: {fileID: 4661620460449790983, guid: 564df649953f1d14fac299735e9c1e31, type: 3}
 --- !u!54 &5757510437738470757
 Rigidbody:
   m_ObjectHideFlags: 0

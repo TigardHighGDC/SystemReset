@@ -11,12 +11,27 @@ public class Bullet : MonoBehaviour
     float horizontal;
     float vertical;
     float timer = 10.0f;
+    int value;
     // Start is called before the first frame update
     void Start()
     {
+        value = weight.GetComponent<WeightSystem>().Pick();
         rb3d = GetComponent<Rigidbody>();
-        horizontal = Random.Range(-1.0f, 1.0f);
-        vertical = Random.Range(-1.0f, 1.0f);
+        switch(value)
+        {
+            case 0:
+                horizontal = 0.0f;
+                vertical = 0.0f;
+                break;
+            case 1:
+                horizontal = Random.Range(-1.0f, 1.0f);
+                vertical = Random.Range(-1.0f, 1.0f);
+                break;
+            default:
+                horizontal = Random.Range(-2.0f, 2.0f);
+                vertical = Random.Range(-2.0f, 2.0f);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -29,6 +44,7 @@ public class Bullet : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            weight.GetComponent<WeightSystem>().Divide(value);
             Destroy(gameObject);
         }
 
@@ -37,7 +53,12 @@ public class Bullet : MonoBehaviour
     
     void OnTriggerEnter(Collider collision)
     {
-        weight.GetComponent<WeightSystem>().straight += 1;
+        weight.GetComponent<WeightSystem>().Divide(value);
+        if (collision.tag == "Player")
+        {
+            weight.GetComponent<WeightSystem>().Add(value);
+        }
+        
         Destroy(gameObject);
     }
 }
