@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class targetDelete : MonoBehaviour
 {
-      void OnTriggerEnter(Collider Projectile)
+      void OnTriggerEnter(Collider other)
       {
-          Destroy(gameObject);
+          if (other.tag == "Projectile")
+          {
+             Destroy(gameObject);
+          }
       }
 }

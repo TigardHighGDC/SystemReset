@@ -24,7 +24,7 @@ public class Rocket : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider collide)
+    void OnTriggerEnter(Collider other)
     {
         Vector3 explosionPos = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
@@ -35,6 +35,6 @@ public class Rocket : MonoBehaviour
                 rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
         }
         Instantiate(explosionParticle, transform.position, transform.rotation);
-        Destroy(gameObject);
+        Destroy(gameObject);        
     }
 }
