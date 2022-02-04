@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5757510437738470752, guid: b7870bc74c4eb2a4d8f0725809a0cea1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5757510437738470755, guid: b7870bc74c4eb2a4d8f0725809a0cea1, type: 3}
       propertyPath: m_Name
       value: Bullet
@@ -501,10 +505,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8528306, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1907926172, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: speed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 130390631514351876, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 130390631514351876, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 831d46f455031ff449272426d3676bb7, type: 2}
     - target: {fileID: 130390631514351878, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: m_Name
       value: Player
@@ -512,6 +528,10 @@ PrefabInstance:
     - target: {fileID: 130390631514351878, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 130390631514351879, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 130390631514351896, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: speed
@@ -565,7 +585,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6677500803206490811, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8245269247476303809, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
 --- !u!1 &1148881497 stripped
 GameObject:

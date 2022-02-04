@@ -52,10 +52,11 @@ public class Bullet : MonoBehaviour
 
     }
     
-    void OnCollisionEnter(Collider collision)
+    void OnCollisionEnter(Collision collide)
     {
+        Debug.Log("Hit");
         weight.GetComponent<WeightSystem>().Divide(value);
-        if (collision.tag == "Player")
+        if (collide.gameObject.tag == "Player")
         {
             weight.GetComponent<WeightSystem>().Add(value);
         }
