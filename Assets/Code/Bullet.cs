@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rb3d;
     public float speed;
-    public GameObject weight;
+    //public WeightSystem data;
     
     float horizontal;
     float vertical;
