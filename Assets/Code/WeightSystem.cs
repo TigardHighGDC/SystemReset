@@ -9,9 +9,9 @@ public class WeightSystem : MonoBehaviour
     public float heavy = 250.0f;
     public int Pick()
     {
-        float total = straight+slight+heavy;
-        float straightProb = straight / total;
-        float slightProb = (slight+straight) / total;
+        float total = straight+slight+heavy + 1.5f;
+        float straightProb = (straight + 0.5f) / total;
+        float slightProb = (slight+straight + 1.0f) / total;
         float r = Random.value;
 
         if (r < straightProb)
@@ -44,24 +44,10 @@ public class WeightSystem : MonoBehaviour
     }
     public void Divide(int divide)
     { 
-        switch(divide)
-        {
-            case 0:
-                slight -= 0.01f;
-                heavy -= 0.01f;
-                break;
-            case 1:
-                straight -= 0.01f;
-                heavy -= 0.01f;
-                break;
-            default:
-                straight -= 0.01f;
-                heavy -= 0.01f;
-                break;
-        }
-        straight /= 1.1f;
-        slight /= 1.1f;
-        heavy /= 1.1f;
+        
+        straight /= 1.001f;
+        slight /= 1.001f;
+        heavy /= 1.001f;
     }
     
     public void Reset()

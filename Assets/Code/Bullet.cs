@@ -25,11 +25,11 @@ public class Bullet : MonoBehaviour
                 break;
             case 1:
                 horizontal = Random.Range(-1.0f, 1.0f);
-                vertical = Random.Range(-1.0f, 1.0f);
+                vertical = 0.0f;
                 break;
             default:
                 horizontal = Random.Range(-2.0f, 2.0f);
-                vertical = Random.Range(-2.0f, 2.0f);
+                vertical = Random.Range(-1.0f, 1.0f);
                 break;
         }
     }
@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour
 
     }
     
-    void OnTriggerEnter(Collider collision)
+    void OnCollisionEnter(Collider collision)
     {
         weight.GetComponent<WeightSystem>().Divide(value);
         if (collision.tag == "Player")
