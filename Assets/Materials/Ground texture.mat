@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ground Texture
+  m_Name: Ground texture
   m_Shader: {fileID: 4800000, guid: 99bb36e9d2c76874e8e8e2baed6debca, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
