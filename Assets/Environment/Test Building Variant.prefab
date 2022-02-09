@@ -102,7 +102,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_Name
-      value: Test Building
+      value: Test Building Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_TagString
