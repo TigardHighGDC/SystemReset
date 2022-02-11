@@ -672,7 +672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361e2fe60ed4d4242ad233c75bd8e93c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reset: {fileID: 4661620460449790983, guid: 564df649953f1d14fac299735e9c1e31, type: 3}
 --- !u!1001 &1465264054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -684,6 +683,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 3192382924709368937, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 0a4b53702119d34418cc40bee19f6228, type: 2}
     - target: {fileID: 3192382924709368948, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
       propertyPath: m_RootOrder
       value: 7
