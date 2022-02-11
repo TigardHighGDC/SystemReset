@@ -497,6 +497,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1727865318, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727865318, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.29761696
+      objectReference: {fileID: 0}
     - target: {fileID: 130390631514351878, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: m_Name
       value: Player
@@ -680,37 +688,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 957414010, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3192382924709368936, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
-    - target: {fileID: 3192382924709368936, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
-      propertyPath: m_TagString
-      value: Geo
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192382924709368936, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192382924709368938, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b43d0b265dc23a94a8c551c9eef04c59, type: 2}
     - target: {fileID: 3192382924709368948, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192382924709368948, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192382924709368948, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3192382924709368948, guid: b82cf48046e95c946b5cf31bc8ac56d2, type: 3}
       propertyPath: m_LocalPosition.x
