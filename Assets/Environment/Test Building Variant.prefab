@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 117168572}
   - component: {fileID: 117168573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_Name
-      value: Test Building Variant
+      value: Test Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_TagString
@@ -209,6 +213,10 @@ PrefabInstance:
       value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_TagString
       value: Geo
       objectReference: {fileID: 0}
@@ -311,6 +319,10 @@ PrefabInstance:
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_Name
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_TagString
@@ -416,6 +428,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_TagString
       value: Geo
       objectReference: {fileID: 0}
@@ -517,6 +533,10 @@ PrefabInstance:
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_Name
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_TagString
@@ -622,6 +642,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -725,6 +749,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -822,6 +850,10 @@ PrefabInstance:
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_Name
       value: Right Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_TagString
@@ -932,6 +964,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_TagString
       value: Geo
       objectReference: {fileID: 0}
@@ -1033,6 +1069,10 @@ PrefabInstance:
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_Name
       value: Left Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_TagString
@@ -1143,6 +1183,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1240,6 +1284,10 @@ PrefabInstance:
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_Name
       value: Ceiling
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_TagString
@@ -1345,6 +1393,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670281171709338816, guid: ae107767ac38bdb47815c0a17e92ceba, type: 3}
       propertyPath: m_TagString
       value: Geo
       objectReference: {fileID: 0}
@@ -1446,6 +1498,10 @@ PrefabInstance:
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_Name
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1653662933893078384, guid: fd2d9c025a1b4d64fa85b430223a0ae4, type: 3}
       propertyPath: m_StaticEditorFlags
