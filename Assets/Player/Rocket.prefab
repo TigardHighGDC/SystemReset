@@ -112,7 +112,7 @@ MonoBehaviour:
   explosionParticle: {fileID: 3958551189205203843, guid: 37e2d62906d7f984f96cd82158045b5b, type: 3}
   camXRotation: {fileID: 3215967689084304775, guid: 2705f4eecbe318644a0d3ac5dccc2489, type: 3}
   rb3d: {fileID: 5707447167962791321}
-  speed: 1250
+  speed: 500
   radius: 4
   power: 350
 --- !u!54 &5707447167962791321
