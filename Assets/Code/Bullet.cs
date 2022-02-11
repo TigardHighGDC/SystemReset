@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour
 
     }
     
-    void OnCollisionEnter(Collision collide)
+    void OnTriggerEnter(Collider collide)
     {
         Debug.Log("Hit");
         weight.GetComponent<WeightSystem>().Divide(value);
