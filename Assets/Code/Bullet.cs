@@ -54,7 +54,6 @@ public class Bullet : MonoBehaviour
     
     void OnTriggerEnter(Collider collide)
     {
-        Debug.Log("Hit");
         weight.GetComponent<WeightSystem>().Divide(value);
         if (collide.gameObject.tag == "Player")
         {
