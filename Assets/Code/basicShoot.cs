@@ -58,15 +58,11 @@ public class basicShoot : MonoBehaviour
         // RayCast
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out rayHit, range)) {
             // Console log
-            Debug.Log(rayHit.collider.name);
-            Debug.Log("Hit...");
             if(rayHit.collider.tag == "enemy")
             {
                 rayHit.collider.GetComponent<Health>().TakeDamage(damage);
             }
             // Obj needs to contain a function called 'TakeDamage' that takes an int as damage
-            
-            Debug.Log("Done");
         }
 
         // Wait fire rate

@@ -699,9 +699,21 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.29761696
       objectReference: {fileID: 0}
+    - target: {fileID: 1907926172, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: speed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 130390631514351878, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 130390631514351879, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 130390631514351879, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 130390631514351899, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: m_RootOrder
