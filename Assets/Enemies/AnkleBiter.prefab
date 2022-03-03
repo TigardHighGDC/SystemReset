@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3007498732838411937}
   m_Layer: 0
   m_Name: AnkleBiter
-  m_TagString: enemy
+  m_TagString: ankleBiter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa20f461eff83d48b51b4f831dbfe33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 130390631514351878, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
   agent: {fileID: 3007498732607785667}
 --- !u!114 &3007498732838411937
 MonoBehaviour:

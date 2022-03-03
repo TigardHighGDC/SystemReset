@@ -175,8 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb3d: {fileID: 130390631514351879}
-  speed: 40
-  thrust: 500
+  speed: 25
+  thrust: 800
 --- !u!136 &8528306
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -473,6 +473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2705f4eecbe318644a0d3ac5dccc2489, type: 3}
+--- !u!1 &130390631203380603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3215967689084304770, guid: 2705f4eecbe318644a0d3ac5dccc2489, type: 3}
+  m_PrefabInstance: {fileID: 3273646362078109945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &130390631203380606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3215967689084304775, guid: 2705f4eecbe318644a0d3ac5dccc2489, type: 3}
@@ -483,3 +488,25 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3215967689084304768, guid: 2705f4eecbe318644a0d3ac5dccc2489, type: 3}
   m_PrefabInstance: {fileID: 3273646362078109945}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &400287220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130390631203380603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d68be67c70f539489edfdd26d4516d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  timeBetweenShots: 1
+  spread: 0
+  reloadTime: 1
+  fireRate: 0
+  range: 1000
+  magSize: 30
+  shotsPerTap: 1
+  allowButtonHold: 0
+  fpsCam: {fileID: 130390631203380601}

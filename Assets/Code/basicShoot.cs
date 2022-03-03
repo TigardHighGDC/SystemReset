@@ -1,7 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class basicShoot : MonoBehaviour
 {
+    HashSet<string> enemies  =  new HashSet<string>();
+    void Start()
+    {
+        enemies.Add("enemy");
+        enemies.Add("ankleBiter");
+    }
     // Gun stats
     public int damage;
     public float timeBetweenShots, spread, reloadTime, fireRate, range;
@@ -58,7 +65,7 @@ public class basicShoot : MonoBehaviour
         // RayCast
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out rayHit, range)) {
             // Console log
-            if(rayHit.collider.tag == "enemy")
+            if(enemies.Contains(rayHit.collider.tag))
             {
                 rayHit.collider.GetComponent<Health>().TakeDamage(damage);
             }
