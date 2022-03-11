@@ -41,11 +41,7 @@ public class AnkleBiterControl : MonoBehaviour
                 line = Mathf.Sqrt(Mathf.Pow(player.transform.position[0] - bitersArr[u][0], 2) + Mathf.Pow(player.transform.position[2] - bitersArr[u][2], 2));
                 arcCircle[0] += Mathf.Cos(positions[i]) * line;
                 arcCircle[2] += Mathf.Sin(positions[i]) * line;
-                line2 =  Mathf.Sqrt(Mathf.Pow(arcCircle[0] - bitersArr[u][0], 2) + Mathf.Pow(arcCircle[2] - bitersArr[u][2], 2));
-                amount = Mathf.Pow(line2, 2);
-                amount -= Mathf.Pow(line, 2) * 2;
-                amount = amount / ((-1) * Mathf.Pow(line, 2)*2);
-                amount = Mathf.Acos(amount);
+                amount =  Mathf.Sqrt(Mathf.Pow(arcCircle[0] - bitersArr[u][0], 2) + Mathf.Pow(arcCircle[2] - bitersArr[u][2], 2)) / line;
                 Debug.Log(amount);
                 if (amount < total)
                 {
