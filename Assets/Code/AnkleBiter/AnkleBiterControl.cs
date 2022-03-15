@@ -84,13 +84,6 @@ public class AnkleBiterControl : MonoBehaviour
             track += 1;
         }
 
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < enemiesPos.Length; i++)
-        {
-            sb.Append(enemiesPos[i].ToString());
-            sb.Append("\t");
-        }
-        string s = sb.ToString();
 
         Vector3 pos;
         float minLine = 10000000000000000.0f;
