@@ -1,14 +1,20 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+// basicShoot.cs
+// Generic shoot script for hitscan type weapons
 public class basicShoot : MonoBehaviour
 {
+    // HashSet used to identify what rayCast is allowed to collide with
+    // Targets for rayCast must have tage of type x for rayCast.hit to be called
+    // on said object, HashSet is const and is initalized on start
     HashSet<string> enemies  =  new HashSet<string>();
     void Start()
     {
         enemies.Add("enemy");
         enemies.Add("ankleBiter");
     }
+
     // Gun stats
     public int damage;
     public float timeBetweenShots, spread, reloadTime, fireRate, range;
@@ -20,7 +26,8 @@ public class basicShoot : MonoBehaviour
 
     // Reference
     public Camera fpsCam;
-    //public Transform attackPoint;
+
+    // Public Transform attackPoint
     public RaycastHit rayHit;
 
     private void Awake() {
@@ -29,63 +36,73 @@ public class basicShoot : MonoBehaviour
     }
 
     // Once per frame update
-    private void Update() {
-        ThisInput();
-    }
-
-    private void ThisInput() {
-        if (allowButtonHold) {
+    private void Update() 
+    {
+        if (allowButtonHold) 
+        {
             shooting = Input.GetKey(KeyCode.Mouse0);
-        } else {
+        } 
+        else 
+        {
             shooting = Input.GetKeyDown(KeyCode.Mouse0);
         }
 
         // 'R' is the reload button
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magSize && !reloading) {
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magSize && !reloading) 
+        {
             Reload();
             Debug.Log("Reloading...");
         }
 
         // Shoot call
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0) {
+        if (readyToShoot && shooting && !reloading && bulletsLeft > 0) 
+        {
             Shoot();
             Debug.Log("This is a shot");
             Debug.Log(bulletsLeft);
         }
     }
 
-    private void Shoot() {
+    private void Shoot() 
+    {
         readyToShoot = false;
         bulletsLeft--;
 
-        // Debug.Log(fpsCam.transform.position);
-        // Debug.Log(fpsCam.transform.forward);
-        // Debug.Log(rayHit);
+        // Spread mechanism
+        float spreadX = Random.Range(-spread, spread);
+        float spreadY = Random.Range(-spread, spread);
+        Vector3 bulletDirection = fpsCam.transform.forward + new Vector3(
+            spreadX, spreadY, 0);
 
-        // RayCast
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out rayHit, range)) {
-            // Console log
+        // RayCast hitdetection
+        // Target must have tage of type x contained in the hash table define
+        // on line TODO and also have the Health component
+        if (Physics.Raycast(fpsCam.transform.position, bulletDirection, 
+            out rayHit, range)) 
+        {
             if(enemies.Contains(rayHit.collider.tag))
             {
                 rayHit.collider.GetComponent<Health>().TakeDamage(damage);
             }
-            // Obj needs to contain a function called 'TakeDamage' that takes an int as damage
         }
 
         // Wait fire rate
         Invoke("ResetShot", fireRate);
     }
 
-    private void ResetShot() {
+    private void ResetShot() 
+    {
         readyToShoot = true;
     }
 
-    private void Reload() {
+    private void Reload() 
+    {
         reloading = true;
         Invoke("FinishReload", reloadTime);
     }
 
-    private void FinishReload() {
+    private void FinishReload() 
+    {
         bulletsLeft = magSize;
         reloading = false;
         Debug.Log("Done reloading...");
