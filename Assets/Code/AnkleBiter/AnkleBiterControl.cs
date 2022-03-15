@@ -25,7 +25,8 @@ public class AnkleBiterControl : MonoBehaviour
 
         for (int i = 0; i < ankleBiter; i++)
         {
-            float angle = i * Mathf.PI*2f / ankleBiter;
+            float angle = (i * Mathf.PI*2f) / ankleBiter;
+            Debug.Log(angle);
             positions[i] = angle;
         }
 
@@ -63,10 +64,10 @@ public class AnkleBiterControl : MonoBehaviour
         //Finds numbers closest to mean
         for (int i = 0; i < ankleBiter; i++)
         {
-            if (Mathf.Abs(mean - ankleBiter) < total)
+            if (Mathf.Abs(mean - enemiesRad[i]) < total)
             {
-                total = Mathf.Abs(mean - ankleBiter);
-                start = i;
+                total = Mathf.Abs(mean - enemiesRad[i]);
+                start = enemPosSort[enemiesRad[i]];
             }
         }
         //Goes through sorted enemiesRad and stores values of enemy that would follow that side
@@ -91,6 +92,18 @@ public class AnkleBiterControl : MonoBehaviour
         }
         string s = sb.ToString();
         Debug.Log(s);
+
+        Vector3 pos;
+        float minLine = 10000000000000000.0f;
+        for (int i = 0; i < ankleBiter; i++)
+        {
+            Debug.Log(minLine);
+            line = Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
+            line = (line / 2) + (line-minLine);
+            pos = new Vector3(Mathf.Cos(positions[i])*line, 0, Mathf.Sin(positions[i])*line) + player.transform.position;
+            bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position = pos;
+        }
+
 
     }
 
