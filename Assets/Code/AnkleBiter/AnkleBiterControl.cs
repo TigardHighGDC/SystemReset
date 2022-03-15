@@ -91,16 +91,22 @@ public class AnkleBiterControl : MonoBehaviour
             sb.Append("\t");
         }
         string s = sb.ToString();
-        Debug.Log(s);
 
         Vector3 pos;
         float minLine = 10000000000000000.0f;
+        mean = 0.0f;
+
         for (int i = 0; i < ankleBiter; i++)
         {
-            Debug.Log(minLine);
+            mean += Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
+        }
+        mean  = mean / ankleBiter;
+        for (int i = 0; i < ankleBiter; i++)
+        {
             line = Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
-            line = (line / 2) + (line-minLine);
+            line = line / 1.2f;
             pos = new Vector3(Mathf.Cos(positions[i])*line, 0, Mathf.Sin(positions[i])*line) + player.transform.position;
+            Debug.Log(new Vector3(Mathf.Cos(positions[i])*line, 0, Mathf.Sin(positions[i])*line));
             bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position = pos;
         }
 
