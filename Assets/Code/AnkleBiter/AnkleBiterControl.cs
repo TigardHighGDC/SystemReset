@@ -51,16 +51,18 @@ public class AnkleBiterControl : MonoBehaviour
             line2 = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] - dot[0], 2) + Mathf.Pow(bitersArr[i].transform.position[2] - dot[2], 2));
 
             enemiesRad[i] = Mathf.Pow(line2, 2) - Mathf.Pow(line,2) - Mathf.Pow(line,2);
-            enemiesRad[i] = enemiesRad[i] / (line * line * -2);
+            enemiesRad[i] = enemiesRad[i] / (line * line * 2);
             enemiesRad[i] = Mathf.Acos(enemiesRad[i]);
             enemPosSort[enemiesRad[i]] = i;
             mean += enemiesRad[i];
         }
+        foreach (var e in enemiesPos)
+        {
+            Debug.Log(e);
+        }
         mean = mean / ankleBiter;
         int start = 0;
         total = 100000.0f;
-        Debug.Log(mean);
-        Array.Sort(enemiesRad);
         //Finds numbers closest to mean
         for (int i = 0; i < ankleBiter; i++)
         {
@@ -99,7 +101,6 @@ public class AnkleBiterControl : MonoBehaviour
             line = Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
             line = line / 1.2f;
             pos = new Vector3(Mathf.Cos(positions[i])*line, 0, Mathf.Sin(positions[i])*line) + player.transform.position;
-            Debug.Log(new Vector3(Mathf.Cos(positions[i])*line, 0, Mathf.Sin(positions[i])*line));
             bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position = pos;
         }
 

@@ -49,7 +49,9 @@ public class GrapplingHook : MonoBehaviour
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
             //The distance grapple will try to keep from grapple point. 
-            joint.maxDistance = distanceFromPoint * 0.8f;
+
+            //Changing grappling hook max distance from 0.8f
+            joint.maxDistance = (distanceFromPoint * 0.8f) - 4f;
             joint.minDistance = distanceFromPoint * 0.25f;
 
             //Adjust these values to fit your game.
