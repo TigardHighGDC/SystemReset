@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8528306, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 130390631514351878, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: m_Name
       value: Player
@@ -863,7 +867,7 @@ Transform:
   m_GameObject: {fileID: 848118204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 1, z: 1.2}
   m_Children: []
   m_Father: {fileID: 2134906288}
   m_RootOrder: 0
@@ -2141,7 +2145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515510621652919019, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7515510621652919019, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2149,7 +2153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515510621652919019, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7515510621652919019, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2161,7 +2165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7515510621652919019, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7515510621652919019, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2170,6 +2174,14 @@ PrefabInstance:
     - target: {fileID: 7515510621652919024, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
       propertyPath: m_Name
       value: UnkleBiter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515510621652919030, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515510621652919031, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7515510621652919031, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
       propertyPath: m_Constraints

@@ -22,7 +22,7 @@ public class UnkleBiter : MonoBehaviour
         if (timer > 0.0f)
         {
             angle = Mathf.Atan2(unkleBiter.transform.position[0]-player.transform.position[0], unkleBiter.transform.position[2]-player.transform.position[2]);
-            movement.rotation = Quaternion.Euler(new Vector3(0,angle*(180/Mathf.PI),0));
+            movement.rotation = Quaternion.RotateTowards(movement.rotation, Quaternion.Euler(new Vector3(0,angle*(180/Mathf.PI),0)), 50.0f * Time.deltaTime); Quaternion.Euler(new Vector3(0,angle*(180/Mathf.PI),0));
             timer -= Time.deltaTime;
         }
         else
@@ -33,13 +33,15 @@ public class UnkleBiter : MonoBehaviour
             }
             else
             {
-                movement.MovePosition(transform.position + new Vector3(-20.0f * Mathf.Sin(angle), 0, -20.0f * Mathf.Cos(angle)) * Time.deltaTime);
+                Vector3 direction = new Vector3(0, 0, -1) * Time.deltaTime * 20.0f;
+                direction = transform.worldToLocalMatrix.inverse * direction;
+                movement.MovePosition(transform.position+direction);
             }
         }
 
         
     }
-    void OnCollisionEnter(Collision collide)
+    void OnTriggerEnter(Collider collide)
     {
         if (collide.gameObject.tag == "Wall")
         {
