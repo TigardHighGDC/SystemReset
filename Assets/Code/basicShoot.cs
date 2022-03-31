@@ -8,7 +8,8 @@ public class basicShoot : MonoBehaviour
     // HashSet used to identify what rayCast is allowed to collide with
     // Targets for rayCast must have tage of type x for rayCast.hit to be called
     // on said object, HashSet is const and is initalized on start
-    HashSet<string> enemies  =  new HashSet<string>();
+    HashSet<string> enemies = new HashSet<string>();
+
     void Start()
     {
         enemies.Add("enemy");
@@ -24,6 +25,20 @@ public class basicShoot : MonoBehaviour
     private int bulletsLeft;
     private bool shooting = false, readyToShoot = true, reloading = false;
 
+    /* Recoil */
+    // Rotations
+    private Vector3 currentRotation;
+    private Vector3 targetRotation;
+
+    // Properties
+    public float recoilX;
+    public float recoilY;
+    public float recoilZ;
+
+    // Tweaks
+    public float snappiness;
+    public float returnSpeed;
+
     // Reference
     public Camera fpsCam;
 
@@ -38,6 +53,13 @@ public class basicShoot : MonoBehaviour
     // Once per frame update
     private void Update() 
     {
+        // Update Recoil
+        targetRotation = Vector3.Lerp(
+            targetRotation, Vector3.zero, returnSpeed * Time.deltaTime);
+        currentRotation = Vector3.Slerp(
+            currentRotation, targetRotation, snappiness * Time.deltaTime);
+
+        // Detect Shoot
         if (allowButtonHold) 
         {
             shooting = Input.GetKey(KeyCode.Mouse0);
@@ -71,8 +93,8 @@ public class basicShoot : MonoBehaviour
         // Spread mechanism
         float spreadX = Random.Range(-spread, spread);
         float spreadY = Random.Range(-spread, spread);
-        Vector3 bulletDirection = fpsCam.transform.forward + new Vector3(
-            spreadX, spreadY, 0);
+        Vector3 bulletDirection = fpsCam.transform.forward + 
+            new Vector3(spreadX, spreadY, 0);
 
         // RayCast hitdetection
         // Target must have tage of type x contained in the hash table define
@@ -88,6 +110,15 @@ public class basicShoot : MonoBehaviour
 
         // Wait fire rate
         Invoke("ResetShot", fireRate);
+    }
+
+    private void RecoilFire()
+    {
+        const auto newX = Random.Range(-recoilX, recoilX);
+        const auto newY = Random.Range(-recoilY, recoilY);
+        const auto newZ = Random.Range(-recoilZ, recoilZ);
+
+        targetRotation += new Vector3(newX, newY, newZ);
     }
 
     private void ResetShot() 
