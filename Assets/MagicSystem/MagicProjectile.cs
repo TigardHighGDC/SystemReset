@@ -38,7 +38,6 @@ public class MagicProjectile : MonoBehaviour
                 }
             }
         }
-        Debug.Log("a");
     }
 
     // Update is called once per frame
