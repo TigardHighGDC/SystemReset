@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class basicShoot : MonoBehaviour
 {
     // HashSet used to identify what rayCast is allowed to collide with
-    // Targets for rayCast must have tage of type x for rayCast.hit to be called
+    // Targets for rayCast must have tag of type x for rayCast.hit to be called
     // on said object, HashSet is const and is initalized on start
     HashSet<string> enemies = new HashSet<string>();
 
@@ -45,7 +45,8 @@ public class basicShoot : MonoBehaviour
     // Public Transform attackPoint
     public RaycastHit rayHit;
 
-    private void Awake() {
+    private void Awake() 
+    {
         bulletsLeft = magSize;
         readyToShoot = true;
     }
