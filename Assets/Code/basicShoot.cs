@@ -22,7 +22,7 @@ public class basicShoot : MonoBehaviour
     public int magSize, shotsPerTap;
     public bool allowButtonHold;
 
-    private int bulletsLeft;
+    private int bulletsLeft, bulletsShot;
     private bool shooting = false, readyToShoot = true, reloading = false;
 
     /* Recoil */
@@ -59,8 +59,11 @@ public class basicShoot : MonoBehaviour
             targetRotation, Vector3.zero, returnSpeed * Time.deltaTime);
         currentRotation = Vector3.Slerp(
             currentRotation, targetRotation, snappiness * Time.deltaTime);
+        
+        // Update player camera
+        transform.localRotation = Quaternion.Euler(currentRotation);
 
-        // Detect Shoot
+        // Detect Shot
         if (allowButtonHold) 
         {
             shooting = Input.GetKey(KeyCode.Mouse0);
@@ -74,15 +77,16 @@ public class basicShoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magSize && !reloading) 
         {
             Reload();
-            Debug.Log("Reloading...");
+            Debug.Log("Reloading..."); // TODO: Remove debug
         }
 
         // Shoot call
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0) 
         {
+            bulletsShot = shotsPerTap;
             Shoot();
-            Debug.Log("This is a shot");
-            Debug.Log(bulletsLeft);
+
+            Debug.Log(bulletsLeft); // TODO: Remove debug
         }
     }
 
@@ -99,7 +103,7 @@ public class basicShoot : MonoBehaviour
 
         // RayCast hitdetection
         // Target must have tage of type x contained in the hash table define
-        // on line TODO and also have the Health component
+        // on line 11 and also have the Health component
         if (Physics.Raycast(fpsCam.transform.position, bulletDirection, 
             out rayHit, range)) 
         {
@@ -111,13 +115,21 @@ public class basicShoot : MonoBehaviour
 
         // Wait fire rate
         Invoke("ResetShot", fireRate);
+        bulletsLeft--;
+        bulletsShot--;
+
+        // Recurse if it is a burst gun
+        if (bulletsShot > 0 && bulletsLeft > 0) 
+        {
+            Invoke("Shoot", timeBetweenShots);
+        }
     }
 
     private void RecoilFire()
     {
-        const auto newX = Random.Range(-recoilX, recoilX);
-        const auto newY = Random.Range(-recoilY, recoilY);
-        const auto newZ = Random.Range(-recoilZ, recoilZ);
+        float newX = Random.Range(-recoilX, recoilX);
+        float newY = Random.Range(0, recoilY);
+        float newZ = Random.Range(-recoilZ, recoilZ);
 
         targetRotation += new Vector3(newX, newY, newZ);
     }
@@ -137,6 +149,6 @@ public class basicShoot : MonoBehaviour
     {
         bulletsLeft = magSize;
         reloading = false;
-        Debug.Log("Done reloading...");
+        Debug.Log("Done reloading..."); // TODO: Remove debug
     }
 }
