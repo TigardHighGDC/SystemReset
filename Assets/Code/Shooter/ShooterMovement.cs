@@ -7,23 +7,8 @@ public class ShooterMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject player;
+    public Rigidbody rb;
     // Start is called before the first frame update
-    int Distance()
-    {
-        float line = Mathf.Sqrt(Mathf.Pow(transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(transform.position[2] - player.transform.position[2], 2));
-        if (line > 20.0f)
-        {
-            return 0;
-        }
-        else if (line > 10.0f)
-        {
-            return 1;
-        }
-        else
-        {
-            return 2;
-        }
-    }  
     
     void Start()
     {
@@ -33,16 +18,12 @@ public class ShooterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(Distance())
+        float line = Mathf.Sqrt(Mathf.Pow(transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(transform.position[2] - player.transform.position[2], 2));
+        if (line < 10.0f)
         {
-            case 0:
-                agent.SetDestination(player.transform.position);
-                break;
-            case 1:
-                break;
-            default:
-                break;
+            rb.MovePosition(transform.position + (-transform.forward*Time.deltaTime*10.0f));
         }
+        agent.SetDestination(player.transform.position);
         
     }
 }
