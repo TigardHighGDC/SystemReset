@@ -10,6 +10,7 @@ public class MagicProjectile : MonoBehaviour
     public float lightningStrength;
     public float speed;
     public float chaos;
+    public float size = 0.2f;
     float chaosTimer = 0.5f;
     Vector3 direction;
     public Rigidbody rb;
@@ -18,6 +19,7 @@ public class MagicProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.localScale = new Vector3(size,size,size);
         if (homingStrength > 0.0f)
         {
             float distance = 100000000000.0f;
@@ -53,7 +55,7 @@ public class MagicProjectile : MonoBehaviour
         }
 
         
-        //direction = transform.worldToLocalMatrix.inverse * direction;
+        
 
         
         rb.MovePosition(transform.position + direction);
