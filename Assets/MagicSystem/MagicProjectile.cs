@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MagicProjectile : MonoBehaviour
 {
+    HashSet<string> breakables  =  new HashSet<string>();
     public float damage;
     public float fireDamage;
     public float homingStrength;
@@ -20,6 +21,10 @@ public class MagicProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        breakables.Add("enemy");
+        breakables.Add("ankleBiter");
+        breakables.Add("Wall");
+
         transform.localScale = new Vector3(size,size,size);
         if (homingStrength > 0.0f)
         {
@@ -78,7 +83,7 @@ public class MagicProjectile : MonoBehaviour
     }
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "enemy" || collision.tag == "ankleBiter" || collision.tag == "Wall")
+        if(breakables.Contains(collision.tag))
         {
             Destroy(gameObject);
         }

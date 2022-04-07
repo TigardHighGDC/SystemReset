@@ -17,7 +17,7 @@ public class MagicShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject spell = Instantiate(bullet, transform.position, transform.rotation);
-            spell.GetComponent<MagicProjectile>().homingStrength = 10.0f;
+            //spell.GetComponent<MagicProjectile>().homingStrength = 10.0f;
         }
         
         
