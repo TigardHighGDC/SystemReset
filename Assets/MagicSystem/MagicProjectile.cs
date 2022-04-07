@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MagicProjectile : MonoBehaviour
 {
-    HashSet<string> breakables  =  new HashSet<string>();
+    public HashSet<string> breakables;
     public float damage;
     public float fireDamage;
     public float homingStrength;
@@ -21,6 +21,7 @@ public class MagicProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        breakables = new HashSet<string>();
         breakables.Add("enemy");
         breakables.Add("ankleBiter");
         breakables.Add("Wall");
