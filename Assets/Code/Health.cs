@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int health = 1;
+    public float health = 100.0f;
+    public float frost;
+    public float fire;
+    public float lightning;
+    
     // Start is called before the first frame update
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
-        Debug.Log("Damage");
         if (health <= 0)
         {
             Destroy(gameObject);
