@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MagicProjectile : MonoBehaviour
 {
     public float damage;
@@ -47,11 +48,25 @@ public class MagicProjectile : MonoBehaviour
     {
         if (homingStrength > 0.0f)
         {
-            direction = Vector3.RotateTowards(transform.forward, enemiesArr[closest].transform.position - transform.position, homingStrength, 0.0f)* Time.deltaTime * speed;;
+            direction = Vector3.RotateTowards(transform.forward, enemiesArr[closest].transform.position - transform.position, homingStrength, 0.0f)* Time.deltaTime * speed;
         }
         else
         {
             direction = transform.forward * Time.deltaTime * speed;
+        }
+
+        if (chaos > 0.0f)
+        {
+            if (chaosTimer > 0.0f)
+            {
+                Vector3 randomDirection = new Vector3(Random.Range(-1.0f,1.0f), Random.Range(-1.0f,1.0f), Random.Range(-1.0f,1.0f));
+                rb.MoveRotation(rb.rotation * Quaternion.Euler(randomDirection * chaos));
+                chaosTimer -= Time.deltaTime;
+            }
+            else
+            {
+                chaosTimer -= Time.deltaTime;
+            }   
         }
 
         
