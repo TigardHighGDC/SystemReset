@@ -10,11 +10,6 @@ public class basicShoot : MonoBehaviour
     // on said object, HashSet is const and is initalized on start
     HashSet<string> enemies = new HashSet<string>();
 
-    void Start()
-    {
-        enemies.Add("enemy");
-        enemies.Add("ankleBiter");
-    }
 
     // Gun stats
     public int damage;
@@ -39,11 +34,23 @@ public class basicShoot : MonoBehaviour
     public float snappiness;
     public float returnSpeed;
 
+    /* Player references */
     // Reference
     public Camera fpsCam;
 
+    // TODO: Fix is not working
+    // Rotate player camera function
+    private RotatePlayerCamera = Player.GetComponent<RotatePlayerCamera>();
+
     // Public Transform attackPoint
     public RaycastHit rayHit;
+
+    // Add targetable tags to hashset
+    void Start()
+    {
+        enemies.Add("enemy");
+        enemies.Add("ankleBiter");
+    }
 
     private void Awake() 
     {
@@ -59,9 +66,9 @@ public class basicShoot : MonoBehaviour
             targetRotation, Vector3.zero, returnSpeed * Time.deltaTime);
         currentRotation = Vector3.Slerp(
             currentRotation, targetRotation, snappiness * Time.deltaTime);
-        
+
         // Update player camera
-        transform.localRotation = Quaternion.Euler(currentRotation);
+        transform.rotation = Quaternion.Euler(currentRotation);
 
         // Detect Shot
         if (allowButtonHold) 
@@ -85,6 +92,7 @@ public class basicShoot : MonoBehaviour
         {
             bulletsShot = shotsPerTap;
             Shoot();
+            RecoilFire();
 
             Debug.Log(bulletsLeft); // TODO: Remove debug
         }
@@ -127,11 +135,20 @@ public class basicShoot : MonoBehaviour
 
     private void RecoilFire()
     {
-        float newX = Random.Range(-recoilX, recoilX);
-        float newY = Random.Range(0, recoilY);
-        float newZ = Random.Range(-recoilZ, recoilZ);
+        // Should not have negative x recoil
+        float newX = Random.Range(-recoilX, 0);
+        float newY = Random.Range(-recoilY, recoilY);
+        float newZ = 0f; // Z Should never be changed
+
+        Debug.Log(newX);
+        Debug.Log(newY);
 
         targetRotation += new Vector3(newX, newY, newZ);
+        
+
+        // TODO: Remove debug logs
+        // Debug.Log(targetRotation);
+        // Debug.Log(Quaternion.Euler(currentRotation));
     }
 
     private void ResetShot() 

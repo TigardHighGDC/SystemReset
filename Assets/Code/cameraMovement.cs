@@ -7,7 +7,6 @@ public class cameraMovement : MonoBehaviour
     public float mouseSpeed;
     public Transform playerPos;
 
-
     float rotation = 0.0f;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +24,9 @@ public class cameraMovement : MonoBehaviour
         rotation = Mathf.Clamp(rotation, -90f, 90f);
         transform.localRotation = Quaternion.Euler(rotation, 0f, 0f);
         playerPos.Rotate(Vector3.up * mouseX);
+    }
 
+    public void RotatePlayerCamera(vector3 NewRotation) {
+        playerPos.Rotate(NewRotation);
     }
 }
