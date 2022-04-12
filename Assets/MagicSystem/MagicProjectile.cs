@@ -11,6 +11,7 @@ public class MagicProjectile : MonoBehaviour
     public float homingStrength;
     public float lightningStrength;
     public float speed;
+    public float maxTime = 20.0f;
     public float chaos;
     public float size = 0.2f;
     float chaosTimer = 0.5f;
@@ -52,6 +53,12 @@ public class MagicProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        maxTime -= Time.deltaTime;
+        if (maxTime < 0.0f)
+        {
+            Destroy(gameObject);
+        }
+
         if (homingStrength > 0.0f)
         {
             direction = Vector3.RotateTowards(transform.forward, enemiesArr[closest].transform.position - transform.position, homingStrength, 0.0f)* Time.deltaTime * speed;
