@@ -1,7 +1,22 @@
+/*
+*   Copyright 2022 TigardHighGDC
+*
+*   Licensed under the Apache License, Version 2.0 (the "License");
+*   you may not use this file except in compliance with the License.
+*   You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+*   Unless required by applicable law or agreed to in writing, software
+*   distributed under the License is distributed on an "AS IS" BASIS,
+*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*   See the License for the specific language governing permissions and
+*   limitations under the License.
+*/
+
 using UnityEngine;
 using System.Collections.Generic;
 
-// basicShoot.cs
 // Generic shoot script for hitscan type weapons
 public class basicShoot : MonoBehaviour
 {
@@ -67,9 +82,8 @@ public class basicShoot : MonoBehaviour
             currentRotation, targetRotation, snappiness * Time.deltaTime);
 
         // Update player camera
-        GetComponentInParent<cameraMovement>().RotatePlayerCamera(currentRotation);
-        // GetComponentInParent<cameraMovement>().RotatePlayerCamera(
-        //     new Vector3(40, 40, 40));
+        GetComponentInParent<cameraMovement>().
+            RotatePlayerCamera(currentRotation);
 
         // Detect Shot
         if (allowButtonHold) 
@@ -136,10 +150,10 @@ public class basicShoot : MonoBehaviour
 
     private void RecoilFire()
     {
-        // Should not have negative x recoil
-        float newX = Random.Range(0, recoilX);
-        float newY = Random.Range(-recoilY, recoilY);
-        float newZ = 0f; // Z Should never be changed
+        // Should not have positive x recoil
+        float newX = Random.Range(-recoilX, 0); // Up / down
+        float newY = Random.Range(-recoilY, recoilY); // Left / Right
+        float newZ = 0f; // Z Should never be changed NEVER
 
         targetRotation += new Vector3(newX, newY, newZ);
 
