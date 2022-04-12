@@ -10,7 +10,6 @@ public class basicShoot : MonoBehaviour
     // on said object, HashSet is const and is initalized on start
     HashSet<string> enemies = new HashSet<string>();
 
-
     // Gun stats
     public int damage;
     public float timeBetweenShots, spread, reloadTime, fireRate, range;
@@ -28,7 +27,6 @@ public class basicShoot : MonoBehaviour
     // Properties
     public float recoilX;
     public float recoilY;
-    public float recoilZ;
 
     // Tweaks
     public float snappiness;
@@ -40,13 +38,14 @@ public class basicShoot : MonoBehaviour
 
     // TODO: Fix is not working
     // Rotate player camera function
-    private RotatePlayerCamera = Player.GetComponent<RotatePlayerCamera>();
+    // private Func<Vector3, void> RotatePlayerCamera = 
+    //     Player.GetComponent<RotatePlayerCamera>();
 
     // Public Transform attackPoint
     public RaycastHit rayHit;
 
     // Add targetable tags to hashset
-    void Start()
+    private void Start()
     {
         enemies.Add("enemy");
         enemies.Add("ankleBiter");
@@ -68,7 +67,9 @@ public class basicShoot : MonoBehaviour
             currentRotation, targetRotation, snappiness * Time.deltaTime);
 
         // Update player camera
-        transform.rotation = Quaternion.Euler(currentRotation);
+        GetComponentInParent<cameraMovement>().RotatePlayerCamera(currentRotation);
+        // GetComponentInParent<cameraMovement>().RotatePlayerCamera(
+        //     new Vector3(40, 40, 40));
 
         // Detect Shot
         if (allowButtonHold) 
@@ -113,7 +114,7 @@ public class basicShoot : MonoBehaviour
         // Target must have tage of type x contained in the hash table define
         // on line 11 and also have the Health component
         if (Physics.Raycast(fpsCam.transform.position, bulletDirection, 
-            out rayHit, range)) 
+                out rayHit, range)) 
         {
             if(enemies.Contains(rayHit.collider.tag))
             {
@@ -136,19 +137,14 @@ public class basicShoot : MonoBehaviour
     private void RecoilFire()
     {
         // Should not have negative x recoil
-        float newX = Random.Range(-recoilX, 0);
+        float newX = Random.Range(0, recoilX);
         float newY = Random.Range(-recoilY, recoilY);
         float newZ = 0f; // Z Should never be changed
 
-        Debug.Log(newX);
-        Debug.Log(newY);
-
         targetRotation += new Vector3(newX, newY, newZ);
-        
 
         // TODO: Remove debug logs
-        // Debug.Log(targetRotation);
-        // Debug.Log(Quaternion.Euler(currentRotation));
+        Debug.Log(targetRotation);
     }
 
     private void ResetShot() 
