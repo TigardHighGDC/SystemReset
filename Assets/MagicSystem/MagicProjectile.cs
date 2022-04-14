@@ -14,6 +14,10 @@ public class MagicProjectile : MonoBehaviour
     public float maxTime = 20.0f;
     public float chaos;
     public float size = 0.2f;
+
+    public int shotgun = 0;
+    public float shotgunSpread;
+    
     float chaosTimer = 0.5f;
     Vector3 direction;
     public Rigidbody rb;

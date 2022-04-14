@@ -1798,6 +1798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b2d5861ed7b1c46b308c192134afb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotgun: 6
+  maxSpread: 60
   bullet: {fileID: 7886975193462475597, guid: 35b8c08c2ec006b4cbbbe76b509d2ad0, type: 3}
 --- !u!1 &1770110934
 GameObject:
