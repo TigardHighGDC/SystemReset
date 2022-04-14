@@ -24,10 +24,6 @@ public class cameraMovement : MonoBehaviour
     public Transform playerPos;
     private float rotation = 0.0f;
 
-    // Consts
-    private const float HeightCap = 85;
-    private const float WidthCap = 60;
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -44,27 +40,5 @@ public class cameraMovement : MonoBehaviour
         rotation = Mathf.Clamp(rotation, -90f, 90f);
         transform.localRotation = Quaternion.Euler(rotation, 0f, 0f);
         playerPos.Rotate(Vector3.up * mouseX);
-
-        // Testing camera rotation
-        // RotatePlayerCamera(new Vector3(50, 20, 30));
-    }
-
-    public void RotatePlayerCamera(Vector3 NewRotation) 
-    {
-        // transform.localRotation = Quaternion.Euler(
-        //     NewRotation.x,
-        //     NewRotation.y,
-        //     NewRotation.z
-        // );
-
-        float playerAngleX = playerPos.transform.rotation.eulerAngles.x;
-
-        Debug.Log(playerAngleX);
-        Debug.Log(NewRotation.x);
-
-        // if (!(playerAngleX + NewRotation.x > HeightCap))
-        // {
-            playerPos.Rotate(new Vector3(NewRotation.x, 0, 0));
-        // }
     }
 }

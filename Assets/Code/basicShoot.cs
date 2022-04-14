@@ -35,26 +35,11 @@ public class basicShoot : MonoBehaviour
     private bool shooting = false, readyToShoot = true, reloading = false;
 
     /* Recoil */
-    // Rotations
-    private Vector3 currentRotation;
-    private Vector3 targetRotation;
-
-    // Properties
-    public float recoilX;
-    public float recoilY;
-
-    // Tweaks
-    public float snappiness;
-    public float returnSpeed;
+    private CameraRecoil Recoil_Script;
 
     /* Player references */
     // Reference
     public Camera fpsCam;
-
-    // TODO: Fix is not working
-    // Rotate player camera function
-    // private Func<Vector3, void> RotatePlayerCamera = 
-    //     Player.GetComponent<RotatePlayerCamera>();
 
     // Public Transform attackPoint
     public RaycastHit rayHit;
@@ -64,6 +49,9 @@ public class basicShoot : MonoBehaviour
     {
         enemies.Add("enemy");
         enemies.Add("ankleBiter");
+
+        // Grab the Recoil Class From CameraRecoil
+        Recoil_Script = GetComponentInParent<CameraRecoil>();
     }
 
     private void Awake() 
@@ -75,16 +63,6 @@ public class basicShoot : MonoBehaviour
     // Once per frame update
     private void Update() 
     {
-        // Update Recoil
-        targetRotation = Vector3.Lerp(
-            targetRotation, Vector3.zero, returnSpeed * Time.deltaTime);
-        currentRotation = Vector3.Slerp(
-            currentRotation, targetRotation, snappiness * Time.deltaTime);
-
-        // Update player camera
-        GetComponentInParent<cameraMovement>().
-            RotatePlayerCamera(currentRotation);
-
         // Detect Shot
         if (allowButtonHold) 
         {
@@ -107,11 +85,10 @@ public class basicShoot : MonoBehaviour
         {
             bulletsShot = shotsPerTap;
             Shoot();
-            RecoilFire();
-
-            Debug.Log(bulletsLeft); // TODO: Remove debug
         }
     }
+
+    private int TotalShots = 0;
 
     private void Shoot() 
     {
@@ -136,29 +113,22 @@ public class basicShoot : MonoBehaviour
             }
         }
 
+        // Camera Recoil
+        Recoil_Script.RecoilFire();
+
         // Wait fire rate
         Invoke("ResetShot", fireRate);
         bulletsLeft--;
         bulletsShot--;
+
+        TotalShots++;
+        Debug.Log("Total Shots: " + TotalShots);
 
         // Recurse if it is a burst gun
         if (bulletsShot > 0 && bulletsLeft > 0) 
         {
             Invoke("Shoot", timeBetweenShots);
         }
-    }
-
-    private void RecoilFire()
-    {
-        // Should not have positive x recoil
-        float newX = Random.Range(-recoilX, 0); // Up / down
-        float newY = Random.Range(-recoilY, recoilY); // Left / Right
-        float newZ = 0f; // Z Should never be changed NEVER
-
-        targetRotation += new Vector3(newX, newY, newZ);
-
-        // TODO: Remove debug logs
-        Debug.Log(targetRotation);
     }
 
     private void ResetShot() 
