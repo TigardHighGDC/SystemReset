@@ -41,7 +41,6 @@ public class MagicShoot : MonoBehaviour
                 spell = Instantiate(bullet, transform.position, transform.rotation);
             }
             
-            //spell.GetComponent<MagicProjectile>().homingStrength = 0.10f;
         }
         
         

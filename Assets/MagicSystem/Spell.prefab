@@ -111,14 +111,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   fireDamage: 0
-  homingStrength: 0
+  homingStrength: 1
   lightningStrength: 0
-  speed: 100
+  speed: 75
   maxTime: 20
   chaos: 0
   size: 0.2
-  shotgun: 0
-  shotgunSpread: 0
   rb: {fileID: -5120658766955141111}
 --- !u!54 &-5120658766955141111
 Rigidbody:

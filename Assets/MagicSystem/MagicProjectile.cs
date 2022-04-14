@@ -14,9 +14,6 @@ public class MagicProjectile : MonoBehaviour
     public float maxTime = 20.0f;
     public float chaos;
     public float size = 0.2f;
-
-    public int shotgun = 0;
-    public float shotgunSpread;
     
     float chaosTimer = 0.5f;
     Vector3 direction;
@@ -45,9 +42,9 @@ public class MagicProjectile : MonoBehaviour
             }
             for (int i = 0; i < enemiesArr.Count; i++)
             {
-                if (Mathf.Sqrt(Mathf.Pow(enemiesArr[i].transform.position[0]-transform.position[0], 2) + Mathf.Pow(enemiesArr[i].transform.position[2]-transform.position[2], 2)) < distance)
+                if (Mathf.Sqrt(Mathf.Pow(enemiesArr[i].transform.position[0]-transform.position[0], 2) + Mathf.Pow(enemiesArr[i].transform.position[1]-transform.position[1], 2) + Mathf.Pow(enemiesArr[i].transform.position[2]-transform.position[2], 2)) < distance)
                 {
-                    distance = Mathf.Sqrt(Mathf.Pow(enemiesArr[i].transform.position[0]-transform.position[0], 2) + Mathf.Pow(enemiesArr[i].transform.position[2]-transform.position[2], 2));
+                    distance = Mathf.Sqrt(Mathf.Pow(enemiesArr[i].transform.position[0]-transform.position[0], 2) + Mathf.Pow(enemiesArr[i].transform.position[1]-transform.position[1], 2) + Mathf.Pow(enemiesArr[i].transform.position[2]-transform.position[2], 2));
                     closest = i;
                 }
             }
@@ -65,11 +62,9 @@ public class MagicProjectile : MonoBehaviour
 
         if (homingStrength > 0.0f)
         {
-            direction = Vector3.RotateTowards(transform.forward, enemiesArr[closest].transform.position - transform.position, homingStrength, 0.0f)* Time.deltaTime * speed;
-        }
-        else
-        {
-            direction = transform.forward * Time.deltaTime * speed;
+            var lookRotation = Quaternion.LookRotation((enemiesArr[closest].transform.position - transform.position).normalized);
+            rb.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * homingStrength);
+            
         }
 
         if (chaos > 0.0f)
@@ -85,6 +80,7 @@ public class MagicProjectile : MonoBehaviour
                 chaosTimer -= Time.deltaTime;
             }   
         }
+        direction = transform.forward * Time.deltaTime * speed;
 
         
         
