@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour
 {
     public string level;
-
     void OnTriggerEnter(Collider collide)
     {
         if (collide.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(level);
+            SceneManager.LoadScene("Assets/Scenes/"+level+".unity");
         }
     }
 }
