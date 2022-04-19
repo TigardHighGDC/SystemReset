@@ -22,7 +22,10 @@ public class cameraMovement : MonoBehaviour
 {
     public float mouseSpeed;
     public Transform playerPos;
+
     private float rotation = 0.0f;
+    private float lastMouseX = 0.0f;
+    private float lastMouseY = 0.0f;
 
     // Start is called before the first frame update
     private void Start()
@@ -36,9 +39,15 @@ public class cameraMovement : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime;
 
-        rotation -= mouseY;
-        rotation = Mathf.Clamp(rotation, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(rotation, 0f, 0f);
-        playerPos.Rotate(Vector3.up * mouseX);
+        if (mouseX != lastMouseX || mouseY != lastMouseY)
+        {
+            rotation -= mouseY;
+            rotation = Mathf.Clamp(rotation, -90f, 90f);
+            transform.localRotation = Quaternion.Euler(rotation, 0f, 0f);
+            playerPos.Rotate(Vector3.up * mouseX);
+
+            lastMouseX = mouseX;
+            lastMouseY = mouseY;
+        }
     }
 }
