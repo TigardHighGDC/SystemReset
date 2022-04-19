@@ -1525,6 +1525,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f7998f96bf15254caa29033c8474ebf, type: 3}
   m_PrefabInstance: {fileID: 451735312}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1585477481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585477480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115dd01b2e318914a9ddf7b3a298bee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: Nate's Test Scene
+--- !u!64 &1585477482
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585477480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1967915808568166387, guid: 5f7998f96bf15254caa29033c8474ebf, type: 3}
 --- !u!208 &1585477484
 NavMeshObstacle:
   m_ObjectHideFlags: 0
