@@ -15,13 +15,16 @@ public class CameraRecoil : MonoBehaviour
     [SerializeField] public float snappiness;
     [SerializeField] public float returnSpeed;
 
+    private Vector3 previousRotation;
+
     private void Start() 
     {
         currentRotation = new Vector3(0, 0, 0);
         targetRotation = currentRotation;
+        previousRotation = currentRotation;
     }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
         targetRotation = Vector3.
             Lerp(targetRotation, Vector3.zero, returnSpeed * Time.deltaTime);
@@ -32,7 +35,11 @@ public class CameraRecoil : MonoBehaviour
                 snappiness * Time.fixedDeltaTime
             );
 
-        transform.localRotation = Quaternion.Euler(currentRotation);
+        // if (currentRotation != previousRotation)
+        // {
+            transform.localRotation = Quaternion.Euler(currentRotation);
+            previousRotation = currentRotation;
+        // }
     }
 
     public void RecoilFire() 

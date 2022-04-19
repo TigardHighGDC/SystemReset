@@ -27,13 +27,11 @@ public class cameraMovement : MonoBehaviour
     private float lastMouseX = 0.0f;
     private float lastMouseY = 0.0f;
 
-    // Start is called before the first frame update
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime;
