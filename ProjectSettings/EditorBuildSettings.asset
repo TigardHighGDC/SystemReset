@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nate'sTestScene.unity
     guid: 582e1c7953c90c447ba08d0998fd664e
+  - enabled: 1
+    path: Assets/Scenes/Level/Level0.unity
+    guid: 198fd983cbd1fb247919db55098585f2
   m_configObjects: {}
