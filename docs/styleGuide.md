@@ -54,7 +54,7 @@ public class thisIsAExampleScript : MonoBehaviour
 Notice how the name of the class exactly matches the file name. Even the lowercase
 first word of the class name.
 
-## C\# If Statements, For Loops, and While 
+## C\# If Statements, For Loops, and While loops
 
 C\# exactly like C, requires the use of curly braces to indicate the start and end
 of an if statement, for loop, or while loop.
