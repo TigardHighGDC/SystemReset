@@ -65,17 +65,17 @@ In C\# the curly braces start on the next line.
 ```cs
 if (exampleBoolean)
 {
-    doSomething();
+    DoSomething();
 }
 
 for (int i = 0; i < 10; i++)
 {
-    doSomething();
+    DoSomething();
 }
 
 while (exampleBoolean)
 {
-    doSomething();
+    DoSomething();
 }
 ```
 
@@ -86,14 +86,14 @@ line is another closing curly brace.
 ```cs
 if (exampleBoolean)
 {
-    doSomething();
+    DoSomething();
 }
 
 if (exampleBoolean)
 {
     for (int i = 0; i < 10; i++)
     {
-        doSomething();
+        DoSomething();
     }
 }
 ```
@@ -175,7 +175,7 @@ easily broken up into multiple lines.
 if (reallyLongClassName.ReallyLongFunctionNaame(reallyLongVariableName) &&
         reallyLongClassName.ReallyLongFunctionNaame(reallyLongVariableName))
 {
-    doSomething();
+    DoSomething();
 }
 ```
 
@@ -203,3 +203,4 @@ needed for the script.
 Every hand written file should have a copyright notice at the top of the file.
 This notice can be found in the root directory of the repository under
 'COPYRIGHT'
+
