@@ -739,6 +739,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &690244998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 130390631203380603, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+  m_PrefabInstance: {fileID: 3550264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &690245002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690244998}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2623e2b662a1bbfb6b176c9b1eed363e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentRotation: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
+  recoilX: -10
+  recoilY: 3
+  recoilZ: 0.25
+  snappiness: 5
+  returnSpeed: 2
+  previousRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &859362329
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,10 +899,6 @@ MonoBehaviour:
   magSize: 1000
   shotsPerTap: 0
   allowButtonHold: 0
-  recoilX: 7
-  recoilY: 7
-  snappiness: 50
-  returnSpeed: 1
   fpsCam: {fileID: 354192281}
 --- !u!1 &1402530263
 GameObject:

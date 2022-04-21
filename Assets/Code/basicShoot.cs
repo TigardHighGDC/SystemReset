@@ -35,7 +35,7 @@ public class basicShoot : MonoBehaviour
     private bool shooting = false, readyToShoot = true, reloading = false;
 
     /* Recoil */
-    private CameraRecoil Recoil_Script;
+    private cameraRecoil Recoil_Script;
 
     /* Player references */
     // Reference
@@ -51,7 +51,7 @@ public class basicShoot : MonoBehaviour
         enemies.Add("ankleBiter");
 
         // Grab the Recoil Class From CameraRecoil
-        Recoil_Script = GetComponentInParent<CameraRecoil>();
+        Recoil_Script = GetComponentInParent<cameraRecoil>();
     }
 
     private void Awake() 

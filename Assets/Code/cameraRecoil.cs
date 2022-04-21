@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraRecoil : MonoBehaviour
+public class cameraRecoil : MonoBehaviour
 {
     // Rotations
     private Vector3 currentRotation;
@@ -16,12 +16,14 @@ public class CameraRecoil : MonoBehaviour
     [SerializeField] public float returnSpeed;
 
     private Vector3 previousRotation;
+    private cameraMovement camMovement;
 
     private void Start() 
     {
         currentRotation = new Vector3(0, 0, 0);
         targetRotation = currentRotation;
         previousRotation = currentRotation;
+        camMovement = GetComponentInParent<cameraMovement>();
     }
 
     private void FixedUpdate() 
@@ -35,11 +37,7 @@ public class CameraRecoil : MonoBehaviour
                 snappiness * Time.fixedDeltaTime
             );
 
-        // if (currentRotation != previousRotation)
-        // {
-            transform.localRotation = Quaternion.Euler(currentRotation);
-            previousRotation = currentRotation;
-        // }
+        camMovement.currentrecoil = currentRotation;
     }
 
     public void RecoilFire() 
