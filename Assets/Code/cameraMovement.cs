@@ -23,24 +23,26 @@ public class cameraMovement : MonoBehaviour
     public float mouseSpeed;
     public Transform playerPos;
 
+    [SerializeField] public Vector3 currentrecoil;
 
-    float rotation = 0.0f;
-    // Start is called before the first frame update
-    void Start()
+    private float xRotation = 0.0f;
+
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSpeed *Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime;
 
-        rotation -= mouseY;
-        rotation = Mathf.Clamp(rotation, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(rotation, 0f, 0f);
+        mouseX += currentrecoil.y;
+        mouseY -= currentrecoil.x;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        transform.localRotation = Quaternion.Euler(xRotation, 0.0f, 0.0f);
         playerPos.Rotate(Vector3.up * mouseX);
-
     }
 }
