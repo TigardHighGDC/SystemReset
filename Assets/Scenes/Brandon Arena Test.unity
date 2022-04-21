@@ -751,19 +751,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690244998}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2623e2b662a1bbfb6b176c9b1eed363e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRotation: {x: 0, y: 0, z: 0}
-  targetRotation: {x: 0, y: 0, z: 0}
-  recoilX: -10
-  recoilY: 3
-  recoilZ: 0.25
-  snappiness: 5
-  returnSpeed: 2
-  previousRotation: {x: 0, y: 0, z: 0}
+  recoilX: -2
+  recoilY: 2
+  snappiness: 20
+  returnSpeed: 15
 --- !u!1 &859362329
 GameObject:
   m_ObjectHideFlags: 0
