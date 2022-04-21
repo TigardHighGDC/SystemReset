@@ -10,7 +10,7 @@ public class LoadLevel : MonoBehaviour
     {
         if (collide.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Assets/Scenes/"+level+".unity");
+            SceneManager.LoadScene("Assets/Scenes/Level/"+level+".unity");
         }
     }
 }
