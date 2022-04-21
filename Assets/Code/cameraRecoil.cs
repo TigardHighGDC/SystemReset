@@ -9,7 +9,6 @@ public class cameraRecoil : MonoBehaviour
     // Settings
     [SerializeField] public float recoilX;
     [SerializeField] public float recoilY;
-    [SerializeField] public float recoilZ;
 
     // Properties
     [SerializeField] public float snappiness;
@@ -45,7 +44,7 @@ public class cameraRecoil : MonoBehaviour
         targetRotation = new Vector3(
             recoilX,
             Random.Range(-recoilY, recoilY),
-            Random.Range(-recoilZ, recoilZ)
+            0.0f
         );
     }
 }
