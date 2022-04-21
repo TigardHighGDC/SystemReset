@@ -5,7 +5,7 @@
 Files should follow the camel case naming convention. Where the begining of the
 first word is lowercase and any new word that follows is capitalized.
 
-Example:
+#### Example:
 ```
 thisIsAExampleFile.cs
 ```
@@ -17,7 +17,7 @@ Variable naming should follow the same convention as file naming.
 The begining of the first word in a variable name should be lowercase and any new
 word that follows should be capitalized.
 
-Example:
+#### Example:
 ```cs
 private float thisIsAExampleVariable;
 ```
@@ -28,7 +28,7 @@ Class naming in C\# also follows the camel case naming convention. Except the
 first word in the class name should be capitalized. Then every new word that
 follows should be capitalized.
 
-Example:
+#### Example:
 ```cs
 public class ThisIsAExampleClass
 {
@@ -39,7 +39,7 @@ This rule cannot be applied to overarching scripts. This is because of how
 the Unity Game Engine works. For a script to be run the class must have the same 
 name as the file name, in this instance the file name takes priority.
 
-Example:
+#### Example:
 File name:
 ```
 thisIsAExampleScript.cs
@@ -61,7 +61,7 @@ of an if statement, for loop, or while loop.
 
 In C\# the curly braces start on the next line.
 
-Example:
+#### Example:
 ```cs
 if (exampleBoolean)
 {
@@ -82,7 +82,7 @@ while (exampleBoolean)
 After every closing curly brace there should be a new line, unless the new
 line is another closing curly brace.
 
-Example:
+#### Example:
 ```cs
 if (exampleBoolean)
 {
@@ -103,7 +103,7 @@ if (exampleBoolean)
 All functions should be treated as objects, and as such should follow the same
 naming convention as class naming.
 
-Example:
+#### Example:
 ```cs
 public void ThisIsAExampleFunction()
 {
@@ -115,7 +115,7 @@ public void ThisIsAExampleFunction()
 Unity provides neumerous functions such as Start and Awake.
 These functions should be marked as private.
 
-Example:
+#### Example:
 ```cs
 private void Awake()
 {
@@ -132,7 +132,7 @@ in the main script class scope that are marked as public are presented as an
 option within the game engine. If this is intended, then the variable should
 the public keyword. Else the variable should be marked as private.
 
-Example:
+#### Example:
 ```cs
 public class exampleScript : MonoBehaviour
 {
@@ -151,7 +151,7 @@ All comments should be use the '//' symbol. Unless the comment is intended to be
 a title for other comments that follow. Even if there is more than one line of
 comment, it should still use the '//' symbol.
 
-Example:
+#### Example:
 ```cs
 /* Title for the following comments */
 // This is a comment.
@@ -170,7 +170,7 @@ line limit.
 Certain things such as if statements, for loops, and while loops can be 
 easily broken up into multiple lines.
 
-Example:
+#### Example:
 ```cs
 if (reallyLongClassName.ReallyLongFunctionNaame(reallyLongVariableName) &&
         reallyLongClassName.ReallyLongFunctionNaame(reallyLongVariableName))
@@ -184,3 +184,22 @@ However these types of lines should be separated into separate variables.
 Since the compiler will need to compute these separate values and store them
 in memory anyways, this will not cause any memory or performance overhead.
 
+## Using unity libraries
+
+Every new script is created with using basic unity libraries.
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+```
+
+Every script must use UnityEngine. However in most cases the other libraries
+can be safely ignored and removed. They should only be included if they are
+needed for the script.
+
+## Copyright
+
+Every hand written file should have a copyright notice at the top of the file.
+This notice can be found in the root directory of the repository under
+'COPYRIGHT'
