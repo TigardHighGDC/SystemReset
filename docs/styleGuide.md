@@ -184,6 +184,9 @@ However these types of lines should be separated into separate variables.
 Since the compiler will need to compute these separate values and store them
 in memory anyways, this will not cause any memory or performance overhead.
 
+The ```cs var ``` keyword is a excellent way to create a variable for this
+purpose.
+
 ## Using unity libraries
 
 Every new script is created with using basic unity libraries.
