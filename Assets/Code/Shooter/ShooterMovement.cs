@@ -20,7 +20,7 @@ public class ShooterMovement : MonoBehaviour
     void Update()
     {
         float line = Mathf.Sqrt(Mathf.Pow(transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(transform.position[2] - player.transform.position[2], 2));
-        if (line < 25.0f)
+        if (line < 14.0f)
         {
             rotation = Mathf.Atan2(transform.position[0]-player.transform.position[0], transform.position[2]-player.transform.position[2]);
             gameObject.GetComponent<NavMeshAgent>().isStopped = true;
