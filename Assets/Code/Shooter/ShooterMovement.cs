@@ -19,12 +19,13 @@ public class ShooterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float line = Mathf.Sqrt(Mathf.Pow(transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(transform.position[2] - player.transform.position[2], 2));
-        if (line < 25.0f)
+        float line = Mathf.Sqrt(Mathf.Pow(transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(transform.position[1] - player.transform.position[1], 2) + Mathf.Pow(transform.position[2] - player.transform.position[2], 2));
+        if (line < 14.0f)
         {
-            rotation = Mathf.Atan2(transform.position[0]-player.transform.position[0], transform.position[2]-player.transform.position[2]);
             gameObject.GetComponent<NavMeshAgent>().isStopped = true;
-            rb.MovePosition(transform.position + (new Vector3(Mathf.Sin(rotation), 0, Mathf.Cos(rotation))*Time.deltaTime*10.0f));
+            Debug.Log(Random.Range(1,100000));
+            rotation = Mathf.Atan2(transform.position[0]-player.transform.position[0], transform.position[2]-player.transform.position[2]);
+            agent.Move(new Vector3(Mathf.Sin(rotation), 0, Mathf.Cos(rotation))*Time.deltaTime*6f);
         }
         else
         {

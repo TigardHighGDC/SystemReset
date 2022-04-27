@@ -19,36 +19,45 @@ public class MagicProjectile : MonoBehaviour
     Vector3 direction;
     public Rigidbody rb;
     List<GameObject> enemiesArr = new List<GameObject>();
-    int closest = 0;
+    HashSet<string> enemies  =  new HashSet<string>();
+    int closest = -1;
+
+    void ClosestEnemy()
+    {
+        closest = -1;
+        enemiesArr  =  new List<GameObject>();
+        float distance = 100000000000.0f;
+        foreach (GameObject biter in GameObject.FindGameObjectsWithTag("ankleBiter"))
+        {
+            enemiesArr.Add(biter);
+        }
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("enemy"))
+        {
+            enemiesArr.Add(enemy);
+        }
+        for (int i = 0; i < enemiesArr.Count; i++)
+        {
+            if (Mathf.Sqrt(Mathf.Pow(enemiesArr[i].transform.position[0]-transform.position[0], 2) + Mathf.Pow(enemiesArr[i].transform.position[1]-transform.position[1], 2) + Mathf.Pow(enemiesArr[i].transform.position[2]-transform.position[2], 2)) < distance)
+            {
+                distance = Mathf.Sqrt(Mathf.Pow(enemiesArr[i].transform.position[0]-transform.position[0], 2) + Mathf.Pow(enemiesArr[i].transform.position[1]-transform.position[1], 2) + Mathf.Pow(enemiesArr[i].transform.position[2]-transform.position[2], 2));
+                closest = i;
+             }
+        }
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
+        ClosestEnemy();
         breakables = new HashSet<string>();
         breakables.Add("enemy");
         breakables.Add("ankleBiter");
         breakables.Add("Wall");
+        enemies.Add("enemy");
+        enemies.Add("ankleBiter");
 
         transform.localScale = new Vector3(size,size,size);
-        if (homingStrength > 0.0f)
-        {
-            float distance = 100000000000.0f;
-            foreach (GameObject biter in GameObject.FindGameObjectsWithTag("ankleBiter"))
-            {
-                enemiesArr.Add(biter);
-            }
-            foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("enemy"))
-            {
-                enemiesArr.Add(enemy);
-            }
-            for (int i = 0; i < enemiesArr.Count; i++)
-            {
-                if (Mathf.Sqrt(Mathf.Pow(enemiesArr[i].transform.position[0]-transform.position[0], 2) + Mathf.Pow(enemiesArr[i].transform.position[1]-transform.position[1], 2) + Mathf.Pow(enemiesArr[i].transform.position[2]-transform.position[2], 2)) < distance)
-                {
-                    distance = Mathf.Sqrt(Mathf.Pow(enemiesArr[i].transform.position[0]-transform.position[0], 2) + Mathf.Pow(enemiesArr[i].transform.position[1]-transform.position[1], 2) + Mathf.Pow(enemiesArr[i].transform.position[2]-transform.position[2], 2));
-                    closest = i;
-                }
-            }
-        }
+    
     }
 
     // Update is called once per frame
@@ -62,8 +71,15 @@ public class MagicProjectile : MonoBehaviour
 
         if (homingStrength > 0.0f)
         {
-            var lookRotation = Quaternion.LookRotation((enemiesArr[closest].transform.position - transform.position).normalized);
-            rb.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * homingStrength);
+            if (closest == -1 || enemiesArr[closest] == false)
+            {
+                ClosestEnemy();
+            }
+            if (closest != -1)
+            {
+                var lookRotation = Quaternion.LookRotation((enemiesArr[closest].transform.position - transform.position).normalized);
+                rb.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * homingStrength);
+            }
             
         }
 
@@ -93,6 +109,10 @@ public class MagicProjectile : MonoBehaviour
     {
         if(breakables.Contains(collision.tag))
         {
+            if (enemies.Contains(collision.tag))
+            {
+                collision.GetComponent<Health>().TakeDamage(damage);
+            }
             Destroy(gameObject);
         }
         
