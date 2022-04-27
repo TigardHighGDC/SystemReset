@@ -264,7 +264,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!64 &1271020275
 MeshCollider:
@@ -279,7 +279,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1689617121}
+  m_Mesh: {fileID: 1493172632}
 --- !u!33 &1271020276
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -287,7 +287,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271020274}
-  m_Mesh: {fileID: 1689617121}
+  m_Mesh: {fileID: 1493172632}
 --- !u!23 &1271020277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12374,7 +12374,7 @@ MonoBehaviour:
     m_AreaError: 15
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
-  m_Mesh: {fileID: 1689617121}
+  m_Mesh: {fileID: 1493172632}
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12391,7 +12391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!43 &1423183283
 Mesh:
@@ -12412,6 +12412,16 @@ Mesh:
     localAABB:
       m_Center: {x: -10, y: 5.5, z: 15.799999}
       m_Extent: {x: 15, y: 5.5, z: 25.8}
+  - serializedVersion: 2
+    firstByte: 288
+    indexCount: 0
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 0
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
   m_Shapes:
     vertices: []
     shapes: []
@@ -12557,7 +12567,7 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!43 &1689617121
+--- !u!43 &1493172632
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12740,7 +12750,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!64 &1766618552
 MeshCollider:
@@ -12784,6 +12794,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: bbb235fff4f48426b863b36058ab66d2, type: 2}
+  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13579,7 +13590,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1766618557
 MonoBehaviour:
@@ -13694,6 +13705,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 393925097353604100, guid: b7f3c4aeab99c334481e037fda6dd50e, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 393925097353604103, guid: b7f3c4aeab99c334481e037fda6dd50e, type: 3}
       propertyPath: m_Name
       value: Shooter
@@ -13746,5 +13761,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 779387408}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 393925097353604345, guid: b7f3c4aeab99c334481e037fda6dd50e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7f3c4aeab99c334481e037fda6dd50e, type: 3}
