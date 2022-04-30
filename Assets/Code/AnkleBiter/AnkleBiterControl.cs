@@ -1,18 +1,18 @@
 /*
-*   Copyright 2022 TigardHighGDC
-*
-*   Licensed under the Apache License, Version 2.0 (the "License");
-*   you may not use this file except in compliance with the License.
-*   You may obtain a copy of the License at
-*
-*   http://www.apache.org/licenses/LICENSE-2.0
-*
-*   Unless required by applicable law or agreed to in writing, software
-*   distributed under the License is distributed on an "AS IS" BASIS,
-*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-*   See the License for the specific language governing permissions and
-*   limitations under the License.
-*/
+ *   Copyright 2022 TigardHighGDC
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ */
 
 using System.Collections;
 using System.Collections.Generic;
@@ -32,7 +32,8 @@ public class AnkleBiterControl : MonoBehaviour
         float[] positions;
         ankleBiter = 0;
         List<GameObject> bitersArr = new List<GameObject>();
-        foreach (GameObject biter in GameObject.FindGameObjectsWithTag("ankleBiter"))
+        foreach (GameObject biter in GameObject.FindGameObjectsWithTag(
+                     "ankleBiter"))
         {
             bitersArr.Add(biter);
             ankleBiter += 1;
@@ -41,7 +42,7 @@ public class AnkleBiterControl : MonoBehaviour
 
         for (int i = 0; i < ankleBiter; i++)
         {
-            float angle = (i * Mathf.PI*2f) / ankleBiter;
+            float angle = (i * Mathf.PI * 2f) / ankleBiter;
             positions[i] = angle;
         }
 
@@ -58,14 +59,22 @@ public class AnkleBiterControl : MonoBehaviour
 
         for (int i = 0; i < ankleBiter; i++)
         {
-            //Finds radians and stores in enemiesRad
-            line = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[i].transform.position[2] - player.transform.position[2], 2));
+            // Finds radians and stores in enemiesRad
+            line = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] -
+                                            player.transform.position[0],
+                                        2) +
+                              Mathf.Pow(bitersArr[i].transform.position[2] -
+                                            player.transform.position[2],
+                                        2));
             dot = player.transform.position;
-            dot[0] += Mathf.Cos(0.0f)*line;
-            dot[2] += Mathf.Sin(0.0f)*line;
-            line2 = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] - dot[0], 2) + Mathf.Pow(bitersArr[i].transform.position[2] - dot[2], 2));
+            dot[0] += Mathf.Cos(0.0f) * line;
+            dot[2] += Mathf.Sin(0.0f) * line;
+            line2 = Mathf.Sqrt(
+                Mathf.Pow(bitersArr[i].transform.position[0] - dot[0], 2) +
+                Mathf.Pow(bitersArr[i].transform.position[2] - dot[2], 2));
 
-            enemiesRad[i] = Mathf.Pow(line2, 2) - Mathf.Pow(line,2) - Mathf.Pow(line,2);
+            enemiesRad[i] =
+                Mathf.Pow(line2, 2) - Mathf.Pow(line, 2) - Mathf.Pow(line, 2);
             enemiesRad[i] = enemiesRad[i] / (line * line * -2);
             enemiesRad[i] = Mathf.Acos(enemiesRad[i]);
             enemPosSort[enemiesRad[i]] = i;
@@ -74,7 +83,7 @@ public class AnkleBiterControl : MonoBehaviour
         mean = mean / ankleBiter;
         int start = 0;
         total = 100000.0f;
-        //Finds numbers closest to mean
+        // Finds numbers closest to mean
         for (int i = 0; i < ankleBiter; i++)
         {
             if (Mathf.Abs(mean - enemiesRad[i]) < total)
@@ -83,14 +92,14 @@ public class AnkleBiterControl : MonoBehaviour
                 start = enemPosSort[enemiesRad[i]];
             }
         }
-        //Goes through sorted enemiesRad and stores values of enemy that would follow that side
-        
+        // Goes through sorted enemiesRad and stores values of enemy that would
+        // follow that side
+
         int track = 0;
         for (int i = start; i < ankleBiter; i++)
         {
             enemiesPos[track] = enemPosSort[enemiesRad[i]];
             track += 1;
-
         }
         for (int i = 0; i < start; i++)
         {
@@ -104,18 +113,31 @@ public class AnkleBiterControl : MonoBehaviour
 
         for (int i = 0; i < ankleBiter; i++)
         {
-            mean += Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
+            mean += Mathf.Sqrt(
+                Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] -
+                              player.transform.position[0],
+                          2) +
+                Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] -
+                              player.transform.position[2],
+                          2));
         }
-        mean  = mean / ankleBiter;
+        mean = mean / ankleBiter;
         for (int i = 0; i < ankleBiter; i++)
         {
-            line = Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
+            line = Mathf.Sqrt(
+                Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] -
+                              player.transform.position[0],
+                          2) +
+                Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] -
+                              player.transform.position[2],
+                          2));
             line = line / 1.2f;
-            pos = new Vector3(Mathf.Cos(positions[i])*line, 0, Mathf.Sin(positions[i])*line) + player.transform.position;
-            bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position = pos;
+            pos = new Vector3(Mathf.Cos(positions[i]) * line, 0,
+                              Mathf.Sin(positions[i]) * line) +
+                  player.transform.position;
+            bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position =
+                pos;
         }
-
-
     }
 
     // Update is called once per frame
