@@ -13,7 +13,6 @@ public class UnkleBiter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -21,8 +20,9 @@ public class UnkleBiter : MonoBehaviour
     {
         if (timer > 0.0f)
         {
-            angle = Mathf.Atan2(unkleBiter.transform.position[0]-player.transform.position[0], unkleBiter.transform.position[2]-player.transform.position[2]);
-            movement.rotation = Quaternion.RotateTowards(movement.rotation, Quaternion.Euler(new Vector3(0,angle*(180/Mathf.PI),0)), 50.0f * Time.deltaTime); Quaternion.Euler(new Vector3(0,angle*(180/Mathf.PI),0));
+            angle = Mathf.Atan2(unkleBiter.transform.position[0] - player.transform.position[0], unkleBiter.transform.position[2] - player.transform.position[2]);
+            movement.rotation = Quaternion.RotateTowards(movement.rotation, Quaternion.Euler(new Vector3(0, angle * (180 / Mathf.PI), 0)), 50.0f * Time.deltaTime);
+            Quaternion.Euler(new Vector3(0, angle * (180 / Mathf.PI), 0));
             timer -= Time.deltaTime;
         }
         else
@@ -35,11 +35,9 @@ public class UnkleBiter : MonoBehaviour
             {
                 Vector3 direction = new Vector3(0, 0, -1) * Time.deltaTime * 20.0f;
                 direction = transform.worldToLocalMatrix.inverse * direction;
-                movement.MovePosition(transform.position+direction);
+                movement.MovePosition(transform.position + direction);
             }
         }
-
-        
     }
     void OnTriggerEnter(Collider collide)
     {

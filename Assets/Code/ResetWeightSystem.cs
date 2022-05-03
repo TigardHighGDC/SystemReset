@@ -1,18 +1,18 @@
 /*
-*   Copyright 2022 TigardHighGDC
-*
-*   Licensed under the Apache License, Version 2.0 (the "License");
-*   you may not use this file except in compliance with the License.
-*   You may obtain a copy of the License at
-*
-*   http://www.apache.org/licenses/LICENSE-2.0
-*
-*   Unless required by applicable law or agreed to in writing, software
-*   distributed under the License is distributed on an "AS IS" BASIS,
-*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-*   See the License for the specific language governing permissions and
-*   limitations under the License.
-*/
+ *   Copyright 2022 TigardHighGDC
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ */
 
 using UnityEngine;
 
@@ -43,7 +43,7 @@ public class GrapplingHook : MonoBehaviour
         }
     }
 
-    //Called after Update
+    // Called after Update
     void LateUpdate()
     {
         DrawRope();
@@ -64,13 +64,13 @@ public class GrapplingHook : MonoBehaviour
 
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
-            //The distance grapple will try to keep from grapple point. 
+            // The distance grapple will try to keep from grapple point.
 
-            //Changing grappling hook max distance from 0.8f
+            // Changing grappling hook max distance from 0.8f
             joint.maxDistance = (distanceFromPoint * 0.8f) - 4f;
             joint.minDistance = distanceFromPoint * 0.25f;
 
-            //Adjust these values to fit your game.
+            // Adjust these values to fit your game.
             joint.spring = 4.5f;
             joint.damper = 7f;
             joint.massScale = 4.5f;
@@ -79,7 +79,6 @@ public class GrapplingHook : MonoBehaviour
             currentGrapplePosition = gunTip.position;
         }
     }
-
 
     /// <summary>
     /// Call whenever we want to stop a grapple
@@ -94,8 +93,9 @@ public class GrapplingHook : MonoBehaviour
 
     void DrawRope()
     {
-        //If not grappling, don't draw rope
-        if (!joint) return;
+        // If not grappling, don't draw rope
+        if (!joint)
+            return;
 
         currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
 
