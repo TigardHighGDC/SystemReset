@@ -55,8 +55,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
 
-        Vector3 direction =
-            new Vector3(horizontal, -1, vertical) * Time.deltaTime *speed;
+        Vector3 direction = new Vector3(horizontal, -1, vertical) * Time.deltaTime *speed;
         direction = transform.worldToLocalMatrix.inverse * direction;
         rb3d.MovePosition(transform.position + direction);
         timer -= Time.deltaTime;

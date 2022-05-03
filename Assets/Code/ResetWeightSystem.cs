@@ -55,16 +55,14 @@ public class GrapplingHook : MonoBehaviour
     void StartGrapple()
     {
         RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit,
-                            maxDistance, whatIsGrappleable))
+        if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = grapplePoint;
 
-            float distanceFromPoint =
-                Vector3.Distance(player.position, grapplePoint);
+            float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
             // The distance grapple will try to keep from grapple point.
 
@@ -99,8 +97,7 @@ public class GrapplingHook : MonoBehaviour
         if (!joint)
             return;
 
-        currentGrapplePosition = Vector3.Lerp(
-            currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
+        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
 
         lr.SetPosition(0, gunTip.position);
         lr.SetPosition(1, currentGrapplePosition);

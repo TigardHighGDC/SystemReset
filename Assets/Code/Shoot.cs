@@ -34,7 +34,6 @@ public class Shoot : MonoBehaviour
     void shootGun()
     {
         RaycastHit hit;
-        Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward,
-                        out hit, range);
+        Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range);
     }
 }

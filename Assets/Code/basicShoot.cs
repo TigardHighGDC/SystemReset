@@ -98,14 +98,12 @@ public class basicShoot : MonoBehaviour
         // Spread mechanism
         float spreadX = Random.Range(-spread, spread);
         float spreadY = Random.Range(-spread, spread);
-        Vector3 bulletDirection =
-            fpsCam.transform.forward + new Vector3(spreadX, spreadY, 0);
+        Vector3 bulletDirection = fpsCam.transform.forward + new Vector3(spreadX, spreadY, 0);
 
         // RayCast hitdetection
         // Target must have tage of type x contained in the hash table define
         // on line 11 and also have the Health component
-        if (Physics.Raycast(fpsCam.transform.position, bulletDirection,
-                            out rayHit, range))
+        if (Physics.Raycast(fpsCam.transform.position, bulletDirection, out rayHit, range))
         {
             if (enemies.Contains(rayHit.collider.tag))
             {

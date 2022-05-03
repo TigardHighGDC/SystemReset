@@ -30,8 +30,7 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(
-            transform.forward, transform.position - player.position,
-            speed * Time.deltaTime, 0.0f));
+        transform.rotation =
+            Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, transform.position - player.position, speed * Time.deltaTime, 0.0f));
     }
 }

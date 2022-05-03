@@ -45,17 +45,14 @@ public class cameraRecoil : MonoBehaviour
 
     private void FixedUpdate()
     {
-        targetRotation = Vector3.Lerp(targetRotation, Vector3.zero,
-                                      returnSpeed * Time.deltaTime);
-        currentRotation = Vector3.Slerp(currentRotation, targetRotation,
-                                        snappiness * Time.fixedDeltaTime);
+        targetRotation = Vector3.Lerp(targetRotation, Vector3.zero, returnSpeed * Time.deltaTime);
+        currentRotation = Vector3.Slerp(currentRotation, targetRotation, snappiness * Time.fixedDeltaTime);
 
         camMovement.currentrecoil = currentRotation;
     }
 
     public void RecoilFire()
     {
-        targetRotation =
-            new Vector3(recoilX, Random.Range(-recoilY, recoilY), 0.0f);
+        targetRotation = new Vector3(recoilX, Random.Range(-recoilY, recoilY), 0.0f);
     }
 }

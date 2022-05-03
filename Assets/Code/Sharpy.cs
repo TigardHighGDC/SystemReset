@@ -32,11 +32,7 @@ public class Sharpy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = Vector3.RotateTowards(transform.forward,
-                                          player.transform.position -
-                                              transform.position,
-                                          10.0f, 0.0f) *
-                    Time.deltaTime * speed;
+        direction = Vector3.RotateTowards(transform.forward, player.transform.position - transform.position, 10.0f, 0.0f) * Time.deltaTime * speed;
         movement.MovePosition(transform.position + direction);
     }
 }

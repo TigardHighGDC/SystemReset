@@ -32,8 +32,7 @@ public class AnkleBiterControl : MonoBehaviour
         float[] positions;
         ankleBiter = 0;
         List<GameObject> bitersArr = new List<GameObject>();
-        foreach (GameObject biter in GameObject.FindGameObjectsWithTag(
-                     "ankleBiter"))
+        foreach (GameObject biter in GameObject.FindGameObjectsWithTag("ankleBiter"))
         {
             bitersArr.Add(biter);
             ankleBiter += 1;
@@ -60,21 +59,14 @@ public class AnkleBiterControl : MonoBehaviour
         for (int i = 0; i < ankleBiter; i++)
         {
             // Finds radians and stores in enemiesRad
-            line = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] -
-                                            player.transform.position[0],
-                                        2) +
-                              Mathf.Pow(bitersArr[i].transform.position[2] -
-                                            player.transform.position[2],
-                                        2));
+            line = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] - player.transform.position[0], 2) +
+                              Mathf.Pow(bitersArr[i].transform.position[2] - player.transform.position[2], 2));
             dot = player.transform.position;
             dot[0] += Mathf.Cos(0.0f) * line;
             dot[2] += Mathf.Sin(0.0f) * line;
-            line2 = Mathf.Sqrt(
-                Mathf.Pow(bitersArr[i].transform.position[0] - dot[0], 2) +
-                Mathf.Pow(bitersArr[i].transform.position[2] - dot[2], 2));
+            line2 = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] - dot[0], 2) + Mathf.Pow(bitersArr[i].transform.position[2] - dot[2], 2));
 
-            enemiesRad[i] =
-                Mathf.Pow(line2, 2) - Mathf.Pow(line, 2) - Mathf.Pow(line, 2);
+            enemiesRad[i] = Mathf.Pow(line2, 2) - Mathf.Pow(line, 2) - Mathf.Pow(line, 2);
             enemiesRad[i] = enemiesRad[i] / (line * line * -2);
             enemiesRad[i] = Mathf.Acos(enemiesRad[i]);
             enemPosSort[enemiesRad[i]] = i;
@@ -113,30 +105,17 @@ public class AnkleBiterControl : MonoBehaviour
 
         for (int i = 0; i < ankleBiter; i++)
         {
-            mean += Mathf.Sqrt(
-                Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] -
-                              player.transform.position[0],
-                          2) +
-                Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] -
-                              player.transform.position[2],
-                          2));
+            mean += Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) +
+                               Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
         }
         mean = mean / ankleBiter;
         for (int i = 0; i < ankleBiter; i++)
         {
-            line = Mathf.Sqrt(
-                Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] -
-                              player.transform.position[0],
-                          2) +
-                Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] -
-                              player.transform.position[2],
-                          2));
+            line = Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) +
+                              Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
             line = line / 1.2f;
-            pos = new Vector3(Mathf.Cos(positions[i]) * line, 0,
-                              Mathf.Sin(positions[i]) * line) +
-                  player.transform.position;
-            bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position =
-                pos;
+            pos = new Vector3(Mathf.Cos(positions[i]) * line, 0, Mathf.Sin(positions[i]) * line) + player.transform.position;
+            bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position = pos;
         }
     }
 
