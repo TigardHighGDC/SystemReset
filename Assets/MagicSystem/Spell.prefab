@@ -111,11 +111,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   fireDamage: 0
-  homingStrength: 20
+  homingStrength: 0
   lightningStrength: 0
   speed: 75
   maxTime: 20
-  chaos: 2
+  chaos: 5
   size: 0.2
   rb: {fileID: -5120658766955141111}
 --- !u!54 &-5120658766955141111
