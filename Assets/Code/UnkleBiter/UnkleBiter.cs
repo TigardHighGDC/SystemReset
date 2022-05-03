@@ -20,10 +20,8 @@ public class UnkleBiter : MonoBehaviour
     {
         if (timer > 0.0f)
         {
-            angle = Mathf.Atan2(unkleBiter.transform.position[0] - player.transform.position[0],
-                                unkleBiter.transform.position[2] - player.transform.position[2]);
-            movement.rotation =
-                Quaternion.RotateTowards(movement.rotation, Quaternion.Euler(new Vector3(0, angle * (180 / Mathf.PI), 0)), 50.0f * Time.deltaTime);
+            angle = Mathf.Atan2(unkleBiter.transform.position[0] - player.transform.position[0], unkleBiter.transform.position[2] - player.transform.position[2]);
+            movement.rotation = Quaternion.RotateTowards(movement.rotation, Quaternion.Euler(new Vector3(0, angle * (180 / Mathf.PI), 0)), 50.0f * Time.deltaTime);
             Quaternion.Euler(new Vector3(0, angle * (180 / Mathf.PI), 0));
             timer -= Time.deltaTime;
         }

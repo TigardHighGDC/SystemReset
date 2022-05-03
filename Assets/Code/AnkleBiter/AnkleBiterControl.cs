@@ -59,8 +59,7 @@ public class AnkleBiterControl : MonoBehaviour
         for (int i = 0; i < ankleBiter; i++)
         {
             // Finds radians and stores in enemiesRad
-            line = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] - player.transform.position[0], 2) +
-                              Mathf.Pow(bitersArr[i].transform.position[2] - player.transform.position[2], 2));
+            line = Mathf.Sqrt(Mathf.Pow(bitersArr[i].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[i].transform.position[2] - player.transform.position[2], 2));
             dot = player.transform.position;
             dot[0] += Mathf.Cos(0.0f) * line;
             dot[2] += Mathf.Sin(0.0f) * line;
@@ -105,14 +104,12 @@ public class AnkleBiterControl : MonoBehaviour
 
         for (int i = 0; i < ankleBiter; i++)
         {
-            mean += Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) +
-                               Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
+            mean += Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
         }
         mean = mean / ankleBiter;
         for (int i = 0; i < ankleBiter; i++)
         {
-            line = Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) +
-                              Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
+            line = Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
             line = line / 1.2f;
             pos = new Vector3(Mathf.Cos(positions[i]) * line, 0, Mathf.Sin(positions[i]) * line) + player.transform.position;
             bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position = pos;
