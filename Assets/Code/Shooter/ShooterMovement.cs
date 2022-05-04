@@ -22,7 +22,6 @@ public class ShooterMovement : MonoBehaviour
         if (line < 14.0f)
         {
             gameObject.GetComponent<NavMeshAgent>().isStopped = true;
-            Debug.Log(Random.Range(1, 100000));
             rotation = Mathf.Atan2(transform.position[0] - player.transform.position[0], transform.position[2] - player.transform.position[2]);
             agent.Move(new Vector3(Mathf.Sin(rotation), 0, Mathf.Cos(rotation)) * Time.deltaTime * 6f);
         }

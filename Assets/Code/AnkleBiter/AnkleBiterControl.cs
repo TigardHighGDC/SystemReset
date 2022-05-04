@@ -103,7 +103,7 @@ public class AnkleBiterControl : MonoBehaviour
         for (int i = 0; i < ankleBiter; i++)
         {
             line = Mathf.Sqrt(Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[0] - player.transform.position[0], 2) + Mathf.Pow(bitersArr[enemiesPos[i]].transform.position[2] - player.transform.position[2], 2));
-            line = line / 1.15f;
+            line = Mathf.Max(line / 1.7f -1f, 1);
             pos = new Vector3(Mathf.Cos(positions[i]) * line, 0, Mathf.Sin(positions[i]) * line) + player.transform.position;
             bitersArr[enemiesPos[i]].GetComponent<AnkleBiterScript>().position = pos;
         }

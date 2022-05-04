@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17296539, g: 0.21616265, b: 0.29813826, a: 1}
+  m_IndirectSpecularColor: {r: 0.17295843, g: 0.2161533, b: 0.29812995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -739,27 +739,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &690244998 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 130390631203380603, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
-  m_PrefabInstance: {fileID: 3550264}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &690245002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690244998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2623e2b662a1bbfb6b176c9b1eed363e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recoilX: -2
-  recoilY: 2
-  snappiness: 20
-  returnSpeed: 15
 --- !u!1 &859362329
 GameObject:
   m_ObjectHideFlags: 0
