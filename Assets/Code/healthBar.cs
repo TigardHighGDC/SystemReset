@@ -15,28 +15,20 @@
  */
 
 using UnityEngine;
+using UnityEngine.UI;
 
-public class playerHealth : MonoBehaviour
+public class healthBar : MonoBehaviour
 {
-    public float maxHealth;
-    private float currentHealth;
+    public Slider healthSlider;
 
-    public healthBar healthBar;
-
-    private void Start()
+    public void SetMaxHealth(float health)
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthSlider.maxValue = health;
+        healthSlider.value = health;
     }
 
-    public void TakeDamage(float damage)
+    public void SetHealth(float health)
     {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-
-        if (currentHealth <= 0)
-        {
-            // Player will die
-        }
+        slider.value = health;
     }
 }
