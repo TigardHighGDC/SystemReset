@@ -22,14 +22,18 @@ public class playerHealth : MonoBehaviour
     public float maxHealth;
     private float currentHealth;
 
+    public healthBar healthBar;
+
     private void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
