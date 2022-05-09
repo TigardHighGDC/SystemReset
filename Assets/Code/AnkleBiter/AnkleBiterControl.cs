@@ -45,16 +45,13 @@ public class AnkleBiterControl : MonoBehaviour
             positions[i] = angle;
         }
 
-        float amount = 0.0f;
         float[] enemiesRad = new float[ankleBiter];
         int[] enemiesPos = new int[ankleBiter];
 
         float line;
-        float line2;
         float mean = 0;
 
         Dictionary<float, int> enemPosSort = new Dictionary<float, int>();
-        Vector3 dot;
 
         for (int i = 0; i < ankleBiter; i++)
         {
@@ -92,7 +89,6 @@ public class AnkleBiterControl : MonoBehaviour
         }
 
         Vector3 pos;
-        float minLine = 10000000000000000.0f;
         mean = 0.0f;
 
         for (int i = 0; i < ankleBiter; i++)
