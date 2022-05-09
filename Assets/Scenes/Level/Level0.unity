@@ -13784,17 +13784,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 1493172632}
   m_IsSelectable: 1
-  m_SelectedFaces: 73010000
-  m_SelectedEdges:
-  - a: 1409
-    b: 1410
-  - a: 1410
-    b: 1411
-  - a: 1412
-    b: 1409
-  - a: 1411
-    b: 1412
-  m_SelectedVertices: 81050000820500008305000084050000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!4 &1271020279
 Transform:
   m_ObjectHideFlags: 0
@@ -15242,6 +15234,10 @@ PrefabInstance:
     - target: {fileID: 393925097353604103, guid: b7f3c4aeab99c334481e037fda6dd50e, type: 3}
       propertyPath: m_Name
       value: Shooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 393925097353604103, guid: b7f3c4aeab99c334481e037fda6dd50e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 393925097353604344, guid: b7f3c4aeab99c334481e037fda6dd50e, type: 3}
       propertyPath: m_RootOrder
