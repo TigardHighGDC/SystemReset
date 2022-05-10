@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb3d: {fileID: 130390631514351879}
-  speed: 20
+  speed: 18
   thrust: 800
 --- !u!136 &8528306
 CapsuleCollider:
