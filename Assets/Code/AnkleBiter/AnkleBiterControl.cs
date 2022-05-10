@@ -56,8 +56,8 @@ public class AnkleBiterControl : MonoBehaviour
         for (int i = 0; i < ankleBiter; i++)
         {
             // Finds radians and stores in enemiesRad
-            
-            enemiesRad[i] = Mathf.Atan2(bitersArr[i].transform.position.x-player.transform.position.x, bitersArr[i].transform.position.z-player.transform.position.z);
+
+            enemiesRad[i] = Mathf.Atan2(bitersArr[i].transform.position.x - player.transform.position.x, bitersArr[i].transform.position.z - player.transform.position.z);
             enemPosSort[enemiesRad[i]] = i;
             mean += enemiesRad[i];
         }
