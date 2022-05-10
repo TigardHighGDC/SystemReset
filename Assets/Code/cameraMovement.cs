@@ -40,7 +40,7 @@ public class cameraMovement : MonoBehaviour
         mouseY -= currentrecoil.x;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -75f, 75f);
         transform.localRotation = Quaternion.Euler(xRotation, 0.0f, 0.0f);
         playerPos.Rotate(Vector3.up * mouseX);
     }
