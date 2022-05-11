@@ -107,6 +107,7 @@ public class basicShoot : MonoBehaviour
         {
             if (enemies.Contains(rayHit.collider.tag))
             {
+                Debug.Log("Hit");
                 rayHit.collider.GetComponent<Health>().TakeDamage(damage);
             }
         }

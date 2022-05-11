@@ -2,15 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static AcrossSceneData;
 
 public class LoadLevel : MonoBehaviour
 {
-    public string level;
     void OnTriggerEnter(Collider collide)
     {
-        if (collide.gameObject.tag == "Player")
+        Debug.Log(collide);
+        if (collide.gameObject.tag == "Player" && GameObject.FindGameObjectsWithTag("ankleBiter").Length == 0 && GameObject.FindGameObjectsWithTag("enemy").Length == 0)
         {
-            SceneManager.LoadScene("Assets/Scenes/Level/"+level+".unity");
+            int index = AcrossSceneData.nonPick;
+            while (index == AcrossSceneData.nonPick)
+            {
+                index = Random.Range(0, AcrossSceneData.Levels.Length);
+            }
+            AcrossSceneData.nonPick = index;
+            Debug.Log(index);
+            SceneManager.LoadScene("Assets/Scenes/Level/"+AcrossSceneData.Levels[index]+".unity");
+
         }
     }
 }
