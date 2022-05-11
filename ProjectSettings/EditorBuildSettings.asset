@@ -5,13 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Arena.unity
     guid: b593ce74b6804bc448e2cc2aed02fbc1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nate'sTestScene.unity
     guid: 582e1c7953c90c447ba08d0998fd664e
   - enabled: 1
     path: Assets/Scenes/Level/Level0.unity
     guid: 198fd983cbd1fb247919db55098585f2
+  - enabled: 1
+    path: Assets/Scenes/Level/Level1.unity
+    guid: 694f58fbc5c390548a4073faa3aa7ea6
+  - enabled: 1
+    path: Assets/Scenes/Level/Level2.unity
+    guid: 2897295054e883f4d8e9c9f9185e32b2
+  - enabled: 1
+    path: Assets/Scenes/Level/Level3.unity
+    guid: c0f634fd5c7c10e41be346a7a5eaf4f9
   m_configObjects: {}
