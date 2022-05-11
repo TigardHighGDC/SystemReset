@@ -77,7 +77,6 @@ public class basicShoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magSize && !reloading)
         {
             Reload();
-            Debug.Log("Reloading..."); // TODO: Remove debug
         }
 
         // Shoot call
@@ -145,6 +144,5 @@ public class basicShoot : MonoBehaviour
     {
         bulletsLeft = magSize;
         reloading = false;
-        Debug.Log("Done reloading..."); // TODO: Remove debug
     }
 }

@@ -24,10 +24,6 @@ public class pauseButton : MonoBehaviour
 
     private void Update()
     {
-        // log the number of times update was called
-        Debug.Log(Time.frameCount);
-
-        // Escape will pause if game is playing else unpause
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.PauseKeyPressed();
