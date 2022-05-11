@@ -15,41 +15,22 @@
  */
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class pauseMenu : MonoBehaviour
+public class pauseButton : MonoBehaviour
 {
+    // Pause Menu Keycode detection
     [SerializeField]
-    private GameObject pauseMenuUI;
+    public pauseMenu pauseMenu;
 
-    private void Start() 
-    {
-        pauseMenuUI.SetActive(false);
-    }
+    private void Update()
+    {   
+        // log the number of times update was called
+        Debug.Log(Time.frameCount);
 
-    public void PauseKeyPressed()
-    {
-        if (Time.timeScale == 1)
+        // Escape will pause if game is playing else unpause
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Pause();
+            pauseMenu.PauseKeyPressed();
         }
-        else
-        {
-            Resume();
-        }
-    }
-
-    private void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 }
