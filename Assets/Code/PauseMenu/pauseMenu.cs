@@ -22,7 +22,7 @@ public class pauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject pauseMenuUI;
 
-    private void Start() 
+    private void Start()
     {
         pauseMenuUI.SetActive(false);
     }

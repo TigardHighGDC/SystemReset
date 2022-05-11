@@ -23,7 +23,7 @@ public class pauseButton : MonoBehaviour
     public pauseMenu pauseMenu;
 
     private void Update()
-    {   
+    {
         // log the number of times update was called
         Debug.Log(Time.frameCount);
 

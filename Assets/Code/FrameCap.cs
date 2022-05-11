@@ -9,5 +9,4 @@ public class FrameCap : MonoBehaviour
     {
         Application.targetFrameRate = 60;
     }
-
 }
