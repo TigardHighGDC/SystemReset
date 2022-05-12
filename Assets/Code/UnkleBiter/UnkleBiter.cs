@@ -6,10 +6,12 @@ public class UnkleBiter : MonoBehaviour
 {
     public GameObject player;
     public GameObject unkleBiter;
-    public Rigidbody movement;
+    Vector3 prev = new Vector3(1,1,1);
+    public UnityEngine.AI.NavMeshAgent agent;
     float angle;
-    float timer = 5.0f;
+    float timer = 3.0f;
     float pause = 0.75f;
+    public float speed = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class UnkleBiter : MonoBehaviour
         if (timer > 0.0f)
         {
             angle = Mathf.Atan2(unkleBiter.transform.position[0] - player.transform.position[0], unkleBiter.transform.position[2] - player.transform.position[2]);
-            movement.rotation = Quaternion.RotateTowards(movement.rotation, Quaternion.Euler(new Vector3(0, angle * (180 / Mathf.PI), 0)), 50.0f * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(0, angle * (180 / Mathf.PI), 0)), 50.0f * Time.deltaTime);
             Quaternion.Euler(new Vector3(0, angle * (180 / Mathf.PI), 0));
             timer -= Time.deltaTime;
         }
@@ -33,9 +35,13 @@ public class UnkleBiter : MonoBehaviour
             }
             else
             {
-                Vector3 direction = new Vector3(0, 0, -1) * Time.deltaTime * 20.0f;
-                direction = transform.worldToLocalMatrix.inverse * direction;
-                movement.MovePosition(transform.position + direction);
+                agent.Move(new Vector3(-1*Mathf.Sin(transform.rotation[1]),0,-1*Mathf.Cos(transform.rotation[1])) * Time.deltaTime * speed);
+                if ((transform.position - prev).magnitude < 0.05f)
+                {
+                    timer = 3.0f;
+                    pause = 0.75f;
+                }
+                prev = transform.position;
             }
         }
     }
