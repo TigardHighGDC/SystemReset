@@ -26,7 +26,7 @@ public class WeaponSwap : MonoBehaviour
 
         if (Gun.select == 1)
         {
-            weapon.GetComponent<basicShoot>().spread = 100.0f;
+            weapon.GetComponent<basicShoot>().spread = 5.0f;
         }
         else if (Gun.select == 2)
         {

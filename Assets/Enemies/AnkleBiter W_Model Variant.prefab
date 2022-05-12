@@ -180,6 +180,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3007498732607785666, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007498732607785666, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007498732607785667, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
+      propertyPath: m_Height
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007498732607785667, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3007498732607785669, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
       propertyPath: m_Name
       value: AnkleBiter W_Model Variant
@@ -202,15 +218,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007498732607785727, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.43714
+      value: -23.324768
       objectReference: {fileID: 0}
     - target: {fileID: 3007498732607785727, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -9.000001
       objectReference: {fileID: 0}
     - target: {fileID: 3007498732607785727, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.619833
+      value: -10.791786
       objectReference: {fileID: 0}
     - target: {fileID: 3007498732607785727, guid: 2c2cf54c2a5142c4490e37ae5b98caa4, type: 3}
       propertyPath: m_LocalRotation.w

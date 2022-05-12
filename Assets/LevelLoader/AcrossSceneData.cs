@@ -6,4 +6,5 @@ public class AcrossSceneData
 {
     public static int nonPick = 0;
     public static string[] Levels = new string[] { "Level0", "Level1", "Level2", "Level3" };
+    public static int levelsComleted = 0;
 }
