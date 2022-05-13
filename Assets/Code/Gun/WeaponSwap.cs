@@ -31,6 +31,9 @@ public class WeaponSwap : MonoBehaviour
         public static bool allowButtonHold = false;
     }
 
+
+
+    Debug.Log(weapon.GetComponent<basicShoot>().spread);
     public class Shotgun
     {
         public static float damage = 18.0f;
