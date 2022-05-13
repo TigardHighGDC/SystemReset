@@ -8,6 +8,7 @@ public class MagicShoot : MonoBehaviour
     public float maxSpread;
     float shotgunSpread;
     public GameObject bullet;
+    public Animation animation;
     GameObject spell;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class MagicShoot : MonoBehaviour
         shotgunSpread  = maxSpread;
         if (Input.GetButtonDown("Fire1"))
         {
+            animation.Play("Hand_Final");
+
             if (shotgun > 0)
             {
                 for (int i = 1; i <= shotgun; i++)
