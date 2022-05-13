@@ -17,6 +17,7 @@ public class LoadLevel : MonoBehaviour
                 index = Random.Range(0, AcrossSceneData.Levels.Length);
             }
             AcrossSceneData.nonPick = index;
+            AcrossSceneData.levelsComleted += 1;
             Debug.Log(index);
             SceneManager.LoadScene("Assets/Scenes/Level/"+AcrossSceneData.Levels[index]+".unity");
 

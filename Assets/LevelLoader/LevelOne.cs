@@ -14,15 +14,15 @@ public class LevelOne : MonoBehaviour
         {
             Instantiate(ankleBiter, new Vector3(Random.Range(10, 59), 4, Random.Range(-18, -11)), Quaternion.identity);
         }
-        for (int i = 0; i < 1+AcrossSceneData.levelsComleted/3; i++)
+        for (int i = 0; i < 1+AcrossSceneData.levelsComleted/4; i++)
         {
             Instantiate(unkleBiter, new Vector3(Random.Range(10, 59), 4, Random.Range(-18, -11)), Quaternion.identity);
         }
-        for (int i = 0; i < 1+AcrossSceneData.levelsComleted/3; i++)
+        for (int i = 0; i < 1+AcrossSceneData.levelsComleted/4; i++)
         {
             Instantiate(unkleBiter, new Vector3(Random.Range(10, 59), 1, Random.Range(-9, -3)), Quaternion.identity);
         }
-        for (int i = 0; i < 1+AcrossSceneData.levelsComleted/3; i++)
+        for (int i = 0; i < 1+AcrossSceneData.levelsComleted/4; i++)
         {
             Instantiate(unkleBiter, new Vector3(Random.Range(10, 59), 1, Random.Range(-28, -22)), Quaternion.identity);
         }
