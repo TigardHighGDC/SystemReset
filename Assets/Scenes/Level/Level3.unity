@@ -2428,6 +2428,7 @@ GameObject:
   - component: {fileID: 192074911}
   - component: {fileID: 192074910}
   - component: {fileID: 192074909}
+  - component: {fileID: 192074914}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -2728,6 +2729,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &192074914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192074908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a792e35eed45e654483606e1c368d882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ankleBiter: {fileID: 196599862766739998, guid: f4a81cd53ba6f1f4389c089a4e6aa6f9, type: 3}
 --- !u!1 &227621810
 GameObject:
   m_ObjectHideFlags: 0
@@ -5190,7 +5204,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25388
+  m_Name: pb_Mesh24076
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

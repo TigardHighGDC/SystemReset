@@ -646,6 +646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1012779736}
   - component: {fileID: 1012779735}
+  - component: {fileID: 1012779737}
   m_Layer: 0
   m_Name: anklebitercontrol
   m_TagString: Untagged
@@ -680,6 +681,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1012779737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012779734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003678eb7af9a8b4db242ed7186c00ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ankleBiter: {fileID: 196599862766739998, guid: f4a81cd53ba6f1f4389c089a4e6aa6f9, type: 3}
+  unkleBiter: {fileID: 7515510621652919024, guid: 2ba4953f6779300468ddb8d47a37e9a4, type: 3}
+  Shooter: {fileID: 393925097353604103, guid: b7f3c4aeab99c334481e037fda6dd50e, type: 3}
 --- !u!1 &1271020274
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +757,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 80f07ba1846c93c44aec5655a43d3726, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
