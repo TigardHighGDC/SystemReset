@@ -34,7 +34,7 @@ public class basicShoot : MonoBehaviour
     public int magSize, shotsPerTap;
     public bool allowButtonHold;
 
-    private int bulletsLeft, bulletsShot;
+    public int bulletsLeft, bulletsShot;
     private bool shooting = false, readyToShoot = true, reloading = false;
 
     /* Recoil */
