@@ -6,3 +6,5 @@ The website was made in Unity ![Unity](https://imgur.com/Pk2Eg2X.jpg) and C# ![C
 
 Thank you! We hope you enjoy our game!
 -Developers
+
+<sub>[Check out our website!](https://tigardhighgdc.github.io/)</sub>
