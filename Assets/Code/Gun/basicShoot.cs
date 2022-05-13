@@ -131,6 +131,12 @@ public class basicShoot : MonoBehaviour
         {
             Invoke("Shoot", timeBetweenShots);
         }
+
+        // Reload if out of ammo
+        if (bulletsLeft <= 0)
+        {
+            Invoke("Reload", reloadTime);
+        }
     }
 
     private void ResetShot()

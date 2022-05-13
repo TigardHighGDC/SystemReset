@@ -35,12 +35,12 @@ public class WeaponSwap : MonoBehaviour
     {
         public static float damage = 18.0f;
         public static float timeBetweenShots = 0.0f;
-        public static float spread = 2.5f;
+        public static float spread = 0.4f;
         public static float reloadTime = 2f;
-        public static float fireRate = 2f;
+        public static float fireRate = 0.8f;
         public static float range = 25f;
-        public static int magSize = 80;
-        public static int shotsPerTap = 10;
+        public static int magSize = 120;
+        public static int shotsPerTap = 15;
         public static bool allowButtonHold = false;
     }
 
@@ -125,6 +125,7 @@ public class WeaponSwap : MonoBehaviour
         basicShoot.magSize = Pistol.magSize;
         basicShoot.shotsPerTap = Pistol.shotsPerTap;
         basicShoot.allowButtonHold = Pistol.allowButtonHold;
+        basicShoot.bulletsLeft = basicShoot.magSize;
     }
 
     private void SelectShotgun()
@@ -137,6 +138,7 @@ public class WeaponSwap : MonoBehaviour
         basicShoot.magSize = Shotgun.magSize;
         basicShoot.shotsPerTap = Shotgun.shotsPerTap;
         basicShoot.allowButtonHold = Shotgun.allowButtonHold;
+        basicShoot.bulletsLeft = basicShoot.magSize;
     }
 
     private void SelectMachineGun()
@@ -149,6 +151,7 @@ public class WeaponSwap : MonoBehaviour
         basicShoot.magSize = MachineGun.magSize;
         basicShoot.shotsPerTap = MachineGun.shotsPerTap;
         basicShoot.allowButtonHold = MachineGun.allowButtonHold;
+        basicShoot.bulletsLeft = basicShoot.magSize;
     }
 
     private void SelectSniperRifle()
@@ -161,6 +164,7 @@ public class WeaponSwap : MonoBehaviour
         basicShoot.magSize = SniperRifle.magSize;
         basicShoot.shotsPerTap = SniperRifle.shotsPerTap;
         basicShoot.allowButtonHold = SniperRifle.allowButtonHold;
+        basicShoot.bulletsLeft = basicShoot.magSize;
     }
 
     private void SelectAssaultRifle()
@@ -173,5 +177,6 @@ public class WeaponSwap : MonoBehaviour
         basicShoot.magSize = AssaultRifle.magSize;
         basicShoot.shotsPerTap = AssaultRifle.shotsPerTap;
         basicShoot.allowButtonHold = AssaultRifle.allowButtonHold;
+        basicShoot.bulletsLeft = basicShoot.magSize;
     }
 }
