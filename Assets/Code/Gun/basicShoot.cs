@@ -20,6 +20,8 @@ using System.Collections.Generic;
 // Generic shoot script for hitscan type weapons
 public class basicShoot : MonoBehaviour
 {
+    public GameObject particle;
+
     // HashSet used to identify what rayCast is allowed to collide with
     // Targets for rayCast must have tag of type x for rayCast.hit to be called
     // on said object, HashSet is const and is initalized on start
@@ -105,9 +107,10 @@ public class basicShoot : MonoBehaviour
         // on line 11 and also have the Health component
         if (Physics.Raycast(fpsCam.transform.position, bulletDirection, out rayHit, range))
         {
+            GameObject hit = Instantiate(particle, rayHit.point, Quaternion.identity);
+            hit.transform.localScale = new Vector3(damage/100f,damage/100f,damage/100f);
             if (enemies.Contains(rayHit.collider.tag))
             {
-                Debug.Log("Hit");
                 rayHit.collider.GetComponent<Health>().TakeDamage(damage);
             }
         }
