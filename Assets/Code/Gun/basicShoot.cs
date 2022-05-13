@@ -27,11 +27,10 @@ public class basicShoot : MonoBehaviour
 
     // Gun stats
     public float damage;
-    
+
     public float timeBetweenShots, spread, reloadTime, fireRate, range;
     public int magSize, shotsPerTap;
     public bool allowButtonHold;
-
 
     private int bulletsLeft, bulletsShot;
     private bool shooting = false, readyToShoot = true, reloading = false;

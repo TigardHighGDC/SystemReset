@@ -8,15 +8,14 @@ public class Disable : MonoBehaviour
 
     void Awake()
     {
-        yourGameObject = GameObject.Find("watermelongunheher");     
+        yourGameObject = GameObject.Find("watermelongunheher");
     }
-
 
     void Update()
     {
-        if(Input.GetKeyDown("o"))
+        if (Input.GetKeyDown("o"))
             yourGameObject.SetActive(true);
-        if(Input.GetKeyDown("p"))
+        if (Input.GetKeyDown("p"))
             yourGameObject.SetActive(false);
     }
 }

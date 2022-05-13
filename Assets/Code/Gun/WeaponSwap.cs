@@ -22,9 +22,9 @@ public class WeaponSwap : MonoBehaviour
     {
         public static float damage = 10.0f;
         public static float timeBetweenShots = 0f;
-        public static float spread = 0.10f; 
-        public static float reloadTime = 2.0f; 
-        public static float fireRate = 1.0f; 
+        public static float spread = 0.10f;
+        public static float reloadTime = 2.0f;
+        public static float fireRate = 1.0f;
         public static float range = 0f;
         public static int magSize = 8;
         public static int shotsPerTap = 1;
@@ -35,9 +35,9 @@ public class WeaponSwap : MonoBehaviour
     {
         public static float damage = 18.0f;
         public static float timeBetweenShots = 0.0f;
-        public static float spread = 2.5f; 
-        public static float reloadTime = 2f; 
-        public static float fireRate = 2f; 
+        public static float spread = 2.5f;
+        public static float reloadTime = 2f;
+        public static float fireRate = 2f;
         public static float range = 25f;
         public static int magSize = 80;
         public static int shotsPerTap = 10;
@@ -90,27 +90,29 @@ public class WeaponSwap : MonoBehaviour
     {
         basicShoot = weapon.GetComponent<basicShoot>();
     }
-    
+
     private void Update()
     {
-        switch (Input.GetKeyDown)
+        if (Input.GetKey(KeyCode.Alpha1))
         {
-            case KeyCode.Alpha1:
-                SelectPistol();
-                break;
-            case KeyCode.Alpha2:
-                SelectShotgun();
-                break;
-            case KeyCode.Alpha3:
-                SelectMachineGun();
-                break;
-            case KeyCode.Alpha4:
-                SelectSniperRifle();
-                break;
-            case KeyCode.Alpha5:
-                SelectAssaultRifle();
-                break;
-        } 
+            SelectPistol();
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            SelectShotgun();
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
+        {
+            SelectMachineGun();
+        }
+        else if (Input.GetKey(KeyCode.Alpha4))
+        {
+            SelectSniperRifle();
+        }
+        else if (Input.GetKey(KeyCode.Alpha5))
+        {
+            SelectAssaultRifle();
+        }
     }
 
     private void SelectPistol()

@@ -6,7 +6,7 @@ public class UnkleBiter : MonoBehaviour
 {
     public GameObject player;
     public GameObject unkleBiter;
-    Vector3 prev = new Vector3(1,1,1);
+    Vector3 prev = new Vector3(1, 1, 1);
     public UnityEngine.AI.NavMeshAgent agent;
     float angle;
     float timer = 3.0f;
@@ -35,7 +35,7 @@ public class UnkleBiter : MonoBehaviour
             }
             else
             {
-                agent.Move(new Vector3(-Mathf.Sin(transform.rotation.y*2),0,-Mathf.Cos(transform.rotation.y*2)) * Time.deltaTime * speed);
+                agent.Move(new Vector3(-Mathf.Sin(transform.rotation.y * 2), 0, -Mathf.Cos(transform.rotation.y * 2)) * Time.deltaTime *speed);
                 if ((transform.position - prev).magnitude < 0.2f)
                 {
                     timer = 3.0f;
