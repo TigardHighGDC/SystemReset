@@ -414,7 +414,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5810186277010779555}
   - component: {fileID: 6863398645774045649}
-  - component: {fileID: 833104552}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -452,28 +451,6 @@ MonoBehaviour:
   maxSpread: 60
   bullet: {fileID: 7886975193462475597, guid: 35b8c08c2ec006b4cbbbe76b509d2ad0, type: 3}
   animation: {fileID: 1556081678}
---- !u!114 &833104552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8521129693703248259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d68be67c70f539489edfdd26d4516d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 100
-  timeBetweenShots: 0
-  spread: 20
-  reloadTime: 2
-  fireRate: 1
-  range: 0
-  magSize: 15
-  shotsPerTap: 1
-  allowButtonHold: 0
-  fpsCam: {fileID: 130390631203380601}
 --- !u!1001 &96116365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1047,6 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d68be67c70f539489edfdd26d4516d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 5499767368454736491, guid: 6b20d0d6d9c316b4d99f64e1027dabe6, type: 3}
   damage: 50
   timeBetweenShots: 1
   spread: 0
