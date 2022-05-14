@@ -20,11 +20,11 @@ public class WeaponSwap : MonoBehaviour
 {
     public class Pistol
     {
-        public static float damage = 25.0f;
+        public static float damage = 50.0f;
         public static float timeBetweenShots = 0f;
         public static float spread = 0.10f;
         public static float reloadTime = 2.0f;
-        public static float fireRate = 0.5f;
+        public static float fireRate = 0f;
         public static float range = 0f;
         public static int magSize = 8;
         public static int shotsPerTap = 1;
@@ -33,20 +33,20 @@ public class WeaponSwap : MonoBehaviour
 
     public class Shotgun
     {
-        public static float damage = 18.0f;
+        public static float damage = 25.0f;
         public static float timeBetweenShots = 0.0f;
         public static float spread = 0.4f;
         public static float reloadTime = 2f;
         public static float fireRate = 0.8f;
         public static float range = 25f;
         public static int magSize = 120;
-        public static int shotsPerTap = 25;
+        public static int shotsPerTap = 30;
         public static bool allowButtonHold = false;
     }
 
     public class MachineGun
     {
-        public static float damage = 20.0f;
+        public static float damage = 35.0f;
         public static float timeBetweenShots = 0.05f;
         public static float spread = 0.05f;
         public static float range = 100.0f;
@@ -72,7 +72,7 @@ public class WeaponSwap : MonoBehaviour
 
     public class AssaultRifle
     {
-        public static float damage = 20.0f;
+        public static float damage = 50.0f;
         public static float timeBetweenShots = 0.1f;
         public static float spread = 0.02f;
         public static float range = 100.0f;
