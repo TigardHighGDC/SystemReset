@@ -36,7 +36,7 @@ public class UnkleBiter : MonoBehaviour
             else
             {
                 agent.Move(new Vector3(-Mathf.Sin(transform.rotation.y * 2), 0, -Mathf.Cos(transform.rotation.y * 2)) * Time.deltaTime *speed);
-                if ((transform.position - prev).magnitude < 0.2f)
+                if ((transform.position - prev).magnitude < 0.03f)
                 {
                     timer = 3.0f;
                     pause = 0.75f;

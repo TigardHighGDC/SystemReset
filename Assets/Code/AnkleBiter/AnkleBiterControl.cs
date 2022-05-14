@@ -22,9 +22,12 @@ using System;
 
 public class AnkleBiterControl : MonoBehaviour
 {
-    public GameObject player;
+    GameObject player;
     // Start is called before the first frame update
-
+    void Start()
+    {
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
+    }
     public void ReCalc()
     {
         float total;
