@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17296539, g: 0.21616265, b: 0.29813826, a: 1}
+  m_IndirectSpecularColor: {r: 0.17295843, g: 0.2161533, b: 0.29812995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -253,10 +253,10 @@ RectTransform:
   m_Father: {fileID: 855657293}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -38}
-  m_SizeDelta: {x: 268.8755, y: 275.5468}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 50, y: 104}
+  m_SizeDelta: {x: 460, y: 52}
   m_Pivot: {x: 0.49999997, y: 0.49999994}
 --- !u!114 &134847584
 MonoBehaviour:
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c1d763e584cd5ef73814335b0fee874d, type: 3}
+  m_Texture: {fileID: 2800000, guid: 87b6b437b93aa1a489ac3a93a15dcfaa, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d68be67c70f539489edfdd26d4516d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
   damage: 0
   timeBetweenShots: 0
   spread: 0
@@ -1160,6 +1161,8 @@ MonoBehaviour:
   magSize: 1000
   shotsPerTap: 0
   allowButtonHold: 0
+  bulletsLeft: 0
+  bulletsShot: 0
   fpsCam: {fileID: 354192281}
 --- !u!1 &1062999499
 GameObject:
@@ -1698,7 +1701,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668561048}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1707,8 +1710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -141.2981, y: -171.11145}
-  m_SizeDelta: {x: -235.2343, y: -143.6988}
+  m_AnchoredPosition: {x: 50, y: 104.000015}
+  m_SizeDelta: {x: 460, y: 52}
   m_Pivot: {x: 1.1099302, y: 1.6949652}
 --- !u!114 &1668561051
 MonoBehaviour:

@@ -45,4 +45,12 @@ public class UnkleBiter : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider player)
+    {
+        if (player.gameObject.tag == "Player")
+        {
+            player.gameObject.GetComponent<playerHealth>().TakeDamage(20f);
+        }
+    }
 }

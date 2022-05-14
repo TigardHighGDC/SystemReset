@@ -35,4 +35,12 @@ public class Sharpy : MonoBehaviour
         direction = Vector3.RotateTowards(transform.forward, player.transform.position - transform.position, 10.0f, 0.0f) * Time.deltaTime * speed;
         movement.MovePosition(transform.position + direction);
     }
+
+    void OnTriggerEnter(Collider player)
+    {
+        if (player.gameObject.tag == "Player")
+        {
+            player.gameObject.GetComponent<playerHealth>().TakeDamage(15f);
+        }
+    }
 }

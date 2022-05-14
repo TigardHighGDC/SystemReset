@@ -7,7 +7,9 @@ public class ShooterMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject player;
+    public GameObject bullet;
     float rotation;
+    float timer = 2.0f;
     // Start is called before the first frame update
 
     void Start()
@@ -29,6 +31,12 @@ public class ShooterMovement : MonoBehaviour
         {
             gameObject.GetComponent<NavMeshAgent>().isStopped = false;
             agent.SetDestination(player.transform.position);
+        }
+        timer -= Time.deltaTime;
+        if (timer < 0.0f)
+        {
+            Instantiate(bullet, transform.position, transform.rotation);
+            timer = 2.0f;
         }
     }
 }

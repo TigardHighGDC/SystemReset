@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 393925097353604100}
   player: {fileID: 0}
+  bullet: {fileID: 5757510437738470755, guid: b7870bc74c4eb2a4d8f0725809a0cea1, type: 3}
 --- !u!114 &3827104642586566190
 MonoBehaviour:
   m_ObjectHideFlags: 0

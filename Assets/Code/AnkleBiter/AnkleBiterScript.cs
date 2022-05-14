@@ -33,4 +33,11 @@ public class AnkleBiterScript : MonoBehaviour
     {
         agent.SetDestination(position);
     }
+    void OnTriggerEnter(Collider player)
+    {
+        if (player.gameObject.tag == "Player")
+        {
+            player.gameObject.GetComponent<playerHealth>().TakeDamage(10f);
+        }
+    }
 }
