@@ -27,18 +27,18 @@ public class playerHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        //healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("Assets/Scenes/MainMenu.unity");
-            // Player will die
         }
     }
 }
