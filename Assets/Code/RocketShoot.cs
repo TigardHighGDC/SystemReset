@@ -21,16 +21,27 @@ using UnityEngine;
 public class RocketShoot : MonoBehaviour
 {
     public GameObject Rocket;
+    bool canJump;
+
     void Start()
     {
+        canJump = true;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown("q"))
+        //if(Input.GetMouseButtonDown(0))
         {
-            Instantiate(Rocket, transform.position, transform.rotation);
+            if(canJump == true)
+            {
+                Instantiate(Rocket, transform.position, transform.rotation);
+                canJump = false;
+                Invoke("cooldown", 0.25f);
+            }
         }
+    }
+    void cooldown()
+    {
+        canJump = true;
     }
 }

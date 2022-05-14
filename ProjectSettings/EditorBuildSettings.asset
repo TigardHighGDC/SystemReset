@@ -9,18 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Lab/Lab1.unity
     guid: a43fc2cbd4955834487ac0675f958006
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 566e9ba8c56e4d94ab18408683b68458
-  - enabled: 1
-    path: Assets/Scenes/Lighting Test.unity
-    guid: 15159c4dd7365334cb6fd810b0571e27
-  - enabled: 1
-    path: Assets/Scenes/Arena.unity
-    guid: b593ce74b6804bc448e2cc2aed02fbc1
-  - enabled: 0
-    path: Assets/Scenes/Nate'sTestScene.unity
-    guid: 582e1c7953c90c447ba08d0998fd664e
-  - enabled: 1
     path: Assets/Scenes/Level/Level0.unity
     guid: 198fd983cbd1fb247919db55098585f2
   - enabled: 1
@@ -32,4 +20,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level/Level3.unity
     guid: c0f634fd5c7c10e41be346a7a5eaf4f9
+  - enabled: 1
+    path: Assets/Scenes/Arena.unity
+    guid: b593ce74b6804bc448e2cc2aed02fbc1
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 566e9ba8c56e4d94ab18408683b68458
+  - enabled: 1
+    path: Assets/Scenes/Lighting Test.unity
+    guid: 15159c4dd7365334cb6fd810b0571e27
+  - enabled: 0
+    path: Assets/Scenes/Nate'sTestScene.unity
+    guid: 582e1c7953c90c447ba08d0998fd664e
   m_configObjects: {}

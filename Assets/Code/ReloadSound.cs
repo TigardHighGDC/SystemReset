@@ -9,6 +9,7 @@ public class ReloadSound : MonoBehaviour
 
     void Start()
     {
+        m_MyAudioSource.playOnAwake = false;
         m_MyAudioSource = GetComponent<AudioSource>();
     }
 
