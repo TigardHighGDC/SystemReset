@@ -2604,6 +2604,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 948a4f1972fa3874bb85d5336165afa2, type: 2}
+    - target: {fileID: 130390631203380607, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
+      propertyPath: mouseSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 130390631514351876, guid: 1625e1c8d1941884bbb589f7932b5f52, type: 3}
       propertyPath: m_Height
       value: 2.5

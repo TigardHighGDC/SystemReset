@@ -238,6 +238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  frost: 0
+  fire: 0
+  lightning: 0
 --- !u!1 &7706469986526091042
 GameObject:
   m_ObjectHideFlags: 0
