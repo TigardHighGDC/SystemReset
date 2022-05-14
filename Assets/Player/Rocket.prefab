@@ -113,8 +113,8 @@ MonoBehaviour:
   camXRotation: {fileID: 3215967689084304775, guid: 2705f4eecbe318644a0d3ac5dccc2489, type: 3}
   rb3d: {fileID: 5707447167962791321}
   speed: 250
-  radius: 4
-  power: 350
+  radius: 10
+  power: 500
 --- !u!54 &5707447167962791321
 Rigidbody:
   m_ObjectHideFlags: 0
