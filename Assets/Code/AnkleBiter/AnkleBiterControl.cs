@@ -22,7 +22,7 @@ using System;
 
 public class AnkleBiterControl : MonoBehaviour
 {
-    GameObject player;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -111,6 +111,7 @@ public class AnkleBiterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Working");
         ReCalc();
     }
 }
