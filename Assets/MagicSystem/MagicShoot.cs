@@ -20,7 +20,7 @@ public class MagicShoot : MonoBehaviour
     {
         shotgunSpread  = maxSpread;
         //animation.Play("Hand_Final");
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             shotgun = 6;       
         }
