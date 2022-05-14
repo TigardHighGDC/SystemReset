@@ -143,7 +143,7 @@ public class WeaponSwap : MonoBehaviour
             sniperRifle.SetActive(false);
             assaultRifle.SetActive(true);
             SelectAssaultRifle();
-        }
+        } 
     }
 
     private void SelectPistol()

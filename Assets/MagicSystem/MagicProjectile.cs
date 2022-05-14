@@ -11,7 +11,7 @@ public class MagicProjectile : MonoBehaviour
     public float homingStrength;
     public float lightningStrength;
     public float speed;
-    public float maxTime = 20.0f;
+    private float maxTime = 20.0f;
     public float chaos;
     public float size = 0.2f;
     
