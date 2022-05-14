@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244534922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 23, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 130390631203380606}
@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1907926172}
   - component: {fileID: 8528306}
   - component: {fileID: 4991364574882652065}
+  - component: {fileID: 779387409}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -190,7 +191,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 130390631203380603}
-  yourGameObject: {fileID: 0}
+  pistol: {fileID: 0}
+  shotgun: {fileID: 0}
+  machineGun: {fileID: 1672967516628120863}
+  sniperRifle: {fileID: 0}
+  assaultRifle: {fileID: 0}
+--- !u!114 &779387409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130390631514351878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cca703ac020cc7cb0caad982041025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!1 &6677500803206490811
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +645,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a66e9d78a417846a6a85eb5223212c, type: 3}
+--- !u!1 &1672967516628120863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 02a66e9d78a417846a6a85eb5223212c, type: 3}
+  m_PrefabInstance: {fileID: 2015073612971624526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3273646362078109945
 PrefabInstance:
   m_ObjectHideFlags: 0
